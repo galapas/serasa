@@ -18,21 +18,33 @@ package br.com.objectos.serasa.relato.factoring;
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-public class Headers {
+class HeaderProcessadoFake {
 
-  private Headers() {
-  }
+  public static final HeaderProcessado OBJECTOS_2015_04_28 = Headers.processado()
+      .registro("")
+      .erro00(1)
+      .erro01(2)
+      .erro02(3)
+      .erro03(1)
+      .erro04(2)
+      .erro05(3)
+      .erro06(1)
+      .erro07(2)
+      .erro08(3)
+      .erro09(1)
+      .erro10(1)
+      .erro11(2)
+      .erro12(3)
+      .erro13(1)
+      .erro14(2)
+      .erro15(3)
+      .erro16(1)
+      .erro17(2)
+      .erro18(3)
+      .erro19(1)
+      .build();
 
-  public static HeaderConciliacaoBuilder conciliacao() {
-    return HeaderConciliacao.builder();
-  }
-
-  public static HeaderNormalBuilder normal() {
-    return HeaderNormal.builder();
-  }
-
-  public static HeaderProcessadoBuilder processado() {
-    return HeaderProcessado.builder();
+  private HeaderProcessadoFake() {
   }
 
 }

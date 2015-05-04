@@ -15,24 +15,20 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
+import static br.com.objectos.way.core.testing.WayMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+
+import org.testng.annotations.Test;
+
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-public class Headers {
+public class HeaderProcessadoTest {
 
-  private Headers() {
-  }
-
-  public static HeaderConciliacaoBuilder conciliacao() {
-    return HeaderConciliacao.builder();
-  }
-
-  public static HeaderNormalBuilder normal() {
-    return HeaderNormal.builder();
-  }
-
-  public static HeaderProcessadoBuilder processado() {
-    return HeaderProcessado.builder();
+  @Test
+  public void size() {
+    String res = HeaderProcessadoFake.OBJECTOS_2015_04_28.toString();
+    assertThat(res.length(), equalTo(190 + 1));
   }
 
 }
