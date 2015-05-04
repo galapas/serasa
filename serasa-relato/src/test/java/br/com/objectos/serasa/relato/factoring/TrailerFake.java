@@ -15,20 +15,19 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import static br.com.objectos.way.core.testing.WayMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
-
-import org.testng.annotations.Test;
-
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-public class HeaderTest {
+class TrailerFake {
 
-  @Test
-  public void size() {
-    String res = HeaderFake.OBJECTOS_2015_04_28.toString();
-    assertThat(res.length(), equalTo(130 + 1));
+  public static final Trailer OBJECTOS_2015_04_28 = Trailer.builder()
+      .tempoRelacionamentoPj(1)
+      .titulosPj(3)
+      .tempoRelacionamentoPf(2)
+      .titulosPf(2)
+      .build();
+
+  private TrailerFake() {
   }
 
 }

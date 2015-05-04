@@ -15,15 +15,18 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
+import br.com.objectos.io.flat.WritableFlatFile;
 import br.com.objectos.io.flat.annotation.FlatFilePojo;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
 @FlatFilePojo
-public abstract class Remessa {
+public abstract class Remessa implements WritableFlatFile {
 
   abstract Header header();
+
+  abstract Trailer trailer();
 
   Remessa() {
   }

@@ -23,6 +23,12 @@ import br.com.objectos.way.base.br.Cnpj;
  */
 public class CnpjFormatter implements CustomFormatter<Cnpj> {
 
+  private static final CnpjFormatter INSTANCE = new CnpjFormatter();
+
+  public static CnpjFormatter get() {
+    return INSTANCE;
+  }
+
   @Override
   public Cnpj parse(String text) {
     return null;
@@ -30,7 +36,7 @@ public class CnpjFormatter implements CustomFormatter<Cnpj> {
 
   @Override
   public String write(Cnpj value) {
-    return null;
+    return String.format("%014d", value.longValue());
   }
 
 }
