@@ -13,28 +13,35 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package br.com.objectos.serasa.util;
+package br.com.objectos.serasa.format;
 
-import static br.com.objectos.way.core.testing.WayMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
-
-import br.com.objectos.serasa.format.CnpjFormatter;
-import br.com.objectos.way.base.br.Cnpj;
-
-import org.testng.annotations.Test;
+import br.com.objectos.io.flat.CustomFormatter;
+import br.com.objectos.way.base.br.TipoDeCadastroRFB;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-public class CnpjFormatterTest {
+public class TipoDeCadastroRfbFormatter implements CustomFormatter<TipoDeCadastroRFB> {
 
-  private final CnpjFormatter formatter = CnpjFormatter.get();
+  private static final TipoDeCadastroRfbFormatter INSTANCE = new TipoDeCadastroRfbFormatter();
 
-  @Test
-  public void write() {
-    Cnpj cnpj = Cnpj.valueOf(7430629000110l);
-    String res = formatter.write(cnpj);
-    assertThat(res, equalTo("07430629000110"));
+  public static TipoDeCadastroRfbFormatter get() {
+    return INSTANCE;
+  }
+
+  @Override
+  public TipoDeCadastroRFB parse(String text) {
+    return null;
+  }
+
+  @Override
+  public String write(TipoDeCadastroRFB value) {
+    switch (value) {
+    case CNPJ:
+      return "05";
+    default:
+      return "09";
+    }
   }
 
 }
