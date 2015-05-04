@@ -32,16 +32,14 @@ import br.com.objectos.io.flat.annotation.Text;
 import br.com.objectos.io.flat.annotation.WhenAbsent;
 import br.com.objectos.serasa.format.CadastroRfbFormatter;
 import br.com.objectos.serasa.format.CnpjFormatter;
-import br.com.objectos.serasa.format.TipoDeCadastroRfbFormatter;
 import br.com.objectos.way.base.br.CadastroRFB;
 import br.com.objectos.way.base.br.Cnpj;
-import br.com.objectos.way.base.br.TipoDeCadastroRFB;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
 @RecordPojo
-abstract class Titulo {
+public abstract class Titulo {
 
   @Prefix
   @Fixed("01")
@@ -50,8 +48,8 @@ abstract class Titulo {
   @CustomFormat(length = 14, formatter = CadastroRfbFormatter.class)
   abstract CadastroRFB cadastroSacado();
 
-  @CustomFormat(length = 2, formatter = TipoDeCadastroRfbFormatter.class)
-  abstract TipoDeCadastroRFB tipoSacado();
+  @FlatEnumFormat(length = 2)
+  abstract TituloTipo tipo();
 
   @Text(length = 10)
   abstract String numeroTitulo();

@@ -15,6 +15,8 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
+import java.util.List;
+
 import br.com.objectos.io.flat.WritableFlatFile;
 import br.com.objectos.io.flat.annotation.FlatFilePojo;
 
@@ -25,6 +27,10 @@ import br.com.objectos.io.flat.annotation.FlatFilePojo;
 public abstract class Remessa implements WritableFlatFile {
 
   abstract Header header();
+
+  abstract List<TempoRelacionamento> tempoRelacionamentoList();
+
+  abstract List<Titulo> tituloList();
 
   abstract Trailer trailer();
 

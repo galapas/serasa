@@ -15,33 +15,28 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import java.time.LocalDate;
-import java.util.Optional;
-
-import br.com.objectos.way.base.br.Cnpj;
-import br.com.objectos.way.base.br.Cpf;
+import br.com.objectos.io.flat.FlatEnum;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-class TituloFake {
+public enum TipoCliente implements FlatEnum {
 
-  public static final Titulo TITULO_0001 = Titulo.builder()
-      .cadastroSacado(Cpf.valueOf(8261431649l))
-      .tipo(TituloTipo.CPF)
-      .numeroTitulo("0001")
-      .dataEmissao(LocalDate.of(2015, 2, 14))
-      .valorNominal(123.45)
-      .dataVencimento(LocalDate.of(2015, 5, 31))
-      .dataPagamento(Optional.<LocalDate> empty())
-      .hashD("")
-      .numeroTituloLongo("")
-      .cnpjCedente(Cnpj.valueOf(80161698000166l))
-      .tipoTitulo(TipoTitulo.DUPLICATA)
-      .tipoInformacao(TipoInformacao.SACADO_CEDENTE)
-      .build();
+  ANTIGO("1"),
 
-  private TituloFake() {
+  MENOS_UM_ANO("2"),
+
+  INATIVO("3");
+
+  private final String flatValue;
+
+  private TipoCliente(String flatValue) {
+    this.flatValue = flatValue;
+  }
+
+  @Override
+  public String flatValue() {
+    return flatValue;
   }
 
 }

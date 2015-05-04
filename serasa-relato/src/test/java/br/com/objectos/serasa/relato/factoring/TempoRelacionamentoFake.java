@@ -13,35 +13,25 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package br.com.objectos.serasa.format;
+package br.com.objectos.serasa.relato.factoring;
 
-import br.com.objectos.io.flat.CustomFormatter;
-import br.com.objectos.way.base.br.TipoDeCadastroRFB;
+import java.time.LocalDate;
+
+import br.com.objectos.way.base.br.Cpf;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-public class TipoDeCadastroRfbFormatter implements CustomFormatter<TipoDeCadastroRFB> {
+class TempoRelacionamentoFake {
 
-  private static final TipoDeCadastroRfbFormatter INSTANCE = new TipoDeCadastroRfbFormatter();
+  public static final TempoRelacionamento SACADO_PF_0001 = TempoRelacionamento.builder()
+      .cadastroSacado(Cpf.valueOf(8261431649l))
+      .tipo(TempoRelacionamentoTipo.CPF)
+      .clienteDesde(LocalDate.of(2010, 1, 1))
+      .tipoCliente(TipoCliente.ANTIGO)
+      .build();
 
-  public static TipoDeCadastroRfbFormatter get() {
-    return INSTANCE;
-  }
-
-  @Override
-  public TipoDeCadastroRFB parse(String text) {
-    return null;
-  }
-
-  @Override
-  public String write(TipoDeCadastroRFB value) {
-    switch (value) {
-    case CNPJ:
-      return "05";
-    default:
-      return "09";
-    }
+  private TempoRelacionamentoFake() {
   }
 
 }
