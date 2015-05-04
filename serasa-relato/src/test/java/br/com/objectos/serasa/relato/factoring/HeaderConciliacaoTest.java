@@ -15,33 +15,20 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import java.time.LocalDate;
-import java.util.Optional;
+import static br.com.objectos.way.core.testing.WayMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
-import br.com.objectos.way.base.br.Cnpj;
-import br.com.objectos.way.base.br.Cpf;
+import org.testng.annotations.Test;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-class TituloFake {
+public class HeaderConciliacaoTest {
 
-  public static final Titulo TITULO_0001 = Titulo.builder()
-      .cadastroSacado(Cpf.valueOf(8261431649l))
-      .tipo(TituloTipo.CPF)
-      .numeroTitulo("0001")
-      .dataEmissao(LocalDate.of(2015, 2, 14))
-      .valorNominal(123.45)
-      .dataVencimento(LocalDate.of(2015, 5, 31))
-      .dataPagamento(Optional.<LocalDate> empty())
-      .hashD("")
-      .numeroTituloLongo("")
-      .cnpjCedente(Cnpj.valueOf(80161698000166l))
-      .tipoTitulo(TipoTitulo.DUPLICATA)
-      .tipoInformacao(TipoInformacao.SACADO_CEDENTE)
-      .build();
-
-  private TituloFake() {
+  @Test
+  public void size() {
+    String res = HeaderConciliacaoFake.OBJECTOS_2015_04_28.toString();
+    assertThat(res.length(), equalTo(130 + 1));
   }
 
 }

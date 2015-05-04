@@ -23,11 +23,11 @@ import org.testng.annotations.Test;
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-public class TituloTest {
+public class TituloConciliacaoTest {
 
   @Test
   public void size() {
-    String res = TituloFake.TITULO_0001.toString();
+    String res = TituloConciliacaoFake.TITULO_0001.toString();
     assertThat(res.length(), equalTo(130 + 1));
   }
 

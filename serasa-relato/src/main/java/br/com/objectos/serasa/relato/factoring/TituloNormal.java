@@ -39,7 +39,7 @@ import br.com.objectos.way.base.br.Cnpj;
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
 @RecordPojo
-public abstract class Titulo {
+public abstract class TituloNormal {
 
   @Prefix
   @Fixed("01")
@@ -109,11 +109,11 @@ public abstract class Titulo {
   @Fill(character = ' ', length = 2)
   abstract String reservado4();
 
-  Titulo() {
+  TituloNormal() {
   }
 
-  public static TituloBuilder builder() {
-    return new TituloBuilderPojo();
+  public static TituloNormalBuilder builder() {
+    return new TituloNormalBuilderPojo();
   }
 
 }

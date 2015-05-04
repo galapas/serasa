@@ -23,11 +23,11 @@ import org.testng.annotations.Test;
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-public class TrailerTest {
+public class HeaderNormalTest {
 
   @Test
   public void size() {
-    String res = TrailerFake.OBJECTOS_2015_04_28.toString();
+    String res = HeaderNormalFake.OBJECTOS_2015_04_28.toString();
     assertThat(res.length(), equalTo(130 + 1));
   }
 

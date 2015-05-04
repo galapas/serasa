@@ -18,16 +18,17 @@ package br.com.objectos.serasa.relato.factoring;
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-class TrailerFake {
+public class Titulos {
 
-  public static final Trailer OBJECTOS_2015_04_28 = Trailer.builder()
-      .tempoRelacionamentoPj(1)
-      .titulosPj(3)
-      .tempoRelacionamentoPf(2)
-      .titulosPf(2)
-      .build();
+  private Titulos() {
+  }
 
-  private TrailerFake() {
+  public static TituloConciliacaoBuilder conciliacao() {
+    return new TituloConciliacaoBuilderPojo();
+  }
+
+  public static TituloNormalBuilder normal() {
+    return new TituloNormalBuilderPojo();
   }
 
 }

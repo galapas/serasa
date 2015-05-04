@@ -22,15 +22,15 @@ import br.com.objectos.way.base.br.Cnpj;
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-class HeaderFake {
+class HeaderNormalFake {
 
-  public static final Header OBJECTOS_2015_04_28 = Header.builder()
+  public static final HeaderNormal OBJECTOS_2015_04_28 = Headers.normal()
       .cnpj(Cnpj.valueOf(7430629000110l))
       .dataInicio(LocalDate.of(2015, 4, 28))
       .dataFinal(LocalDate.of(2015, 4, 29))
       .build();
 
-  private HeaderFake() {
+  private HeaderNormalFake() {
   }
 
 }

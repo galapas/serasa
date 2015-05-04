@@ -15,30 +15,21 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import java.util.List;
+import java.time.LocalDate;
 
-import br.com.objectos.io.flat.WritableFlatFile;
-import br.com.objectos.io.flat.annotation.FlatFilePojo;
+import br.com.objectos.way.base.br.Cnpj;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-@FlatFilePojo
-public abstract class Remessa implements WritableFlatFile {
+class HeaderConciliacaoFake {
 
-  abstract Header header();
+  public static final HeaderConciliacao OBJECTOS_2015_04_28 = Headers.conciliacao()
+      .cnpj(Cnpj.valueOf(7430629000110l))
+      .dataFinal(LocalDate.of(2015, 4, 29))
+      .build();
 
-  abstract List<TempoRelacionamento> tempoRelacionamentoList();
-
-  abstract List<Titulo> tituloList();
-
-  abstract Trailer trailer();
-
-  Remessa() {
-  }
-
-  public static RemessaBuilder builder() {
-    return new RemessaBuilderPojo();
+  private HeaderConciliacaoFake() {
   }
 
 }

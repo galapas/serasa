@@ -31,7 +31,7 @@ import br.com.objectos.way.base.br.Cnpj;
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
 @RecordPojo
-public abstract class Header {
+public abstract class HeaderConciliacao {
 
   @Prefix
   @Fixed("00")
@@ -43,8 +43,8 @@ public abstract class Header {
   @CustomFormat(length = 14, formatter = CnpjFormatter.class)
   abstract Cnpj cnpj();
 
-  @LocalDateFormat(LocalDatePattern.YYYYMMDD)
-  abstract LocalDate dataInicio();
+  @Fixed("CONCILIA")
+  abstract String concilia();
 
   @LocalDateFormat(LocalDatePattern.YYYYMMDD)
   abstract LocalDate dataFinal();
@@ -70,11 +70,11 @@ public abstract class Header {
   @Fill(character = ' ', length = 26)
   abstract String brancos1();
 
-  Header() {
+  HeaderConciliacao() {
   }
 
-  public static HeaderBuilder builder() {
-    return new HeaderBuilderPojo();
+  public static HeaderConciliacaoBuilder builder() {
+    return new HeaderConciliacaoBuilderPojo();
   }
 
 }

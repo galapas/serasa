@@ -26,14 +26,14 @@ import br.com.objectos.io.flat.annotation.RecordPojo;
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
 @RecordPojo
-public abstract class Trailer {
+public abstract class TrailerConciliacao {
 
   @Prefix
   @Fixed("99")
   abstract String id();
 
-  @IntegerFormat(length = 11, options = { IntegerOption.ZEROFILL })
-  abstract int tempoRelacionamentoPj();
+  @Fill(character = '0', length = 11)
+  abstract String tempoRelacionamentoPj();
 
   @Fill(character = ' ', length = 44)
   abstract String brancos0();
@@ -41,8 +41,8 @@ public abstract class Trailer {
   @IntegerFormat(length = 11, options = { IntegerOption.ZEROFILL })
   abstract int titulosPj();
 
-  @IntegerFormat(length = 11, options = { IntegerOption.ZEROFILL })
-  abstract int tempoRelacionamentoPf();
+  @Fill(character = '0', length = 11)
+  abstract String tempoRelacionamentoPf();
 
   @IntegerFormat(length = 11, options = { IntegerOption.ZEROFILL })
   abstract int titulosPf();
@@ -53,11 +53,11 @@ public abstract class Trailer {
   @Fill(character = ' ', length = 30)
   abstract String brancos1();
 
-  Trailer() {
+  TrailerConciliacao() {
   }
 
-  public static TrailerBuilder builder() {
-    return new TrailerBuilderPojo();
+  public static TrailerConciliacaoBuilder builder() {
+    return new TrailerConciliacaoBuilderPojo();
   }
 
 }
