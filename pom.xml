@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>br.com.objectos</groupId>
+		<artifactId>way</artifactId>
+		<version>2.2.0</version>
+	</parent>
+	
+	<artifactId>serasa</artifactId>
+	<version>0.1.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+		
+	<name>objectos :: serasa</name>
+	<description>Arquivos de troca Serasa Experian (tm).</description>
+	<url>https://github.com/objectos/serasa</url>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:ssh://git@rio.objectos.com.br:7999/objectos/serasa.git</connection>
+		<developerConnection>scm:git:ssh://git@rio.objectos.com.br:7999/objectos/serasa.git</developerConnection>
+		<url>https://github.com/objectos/serasa</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>moe</id>
+			<name>Marcio Endo</name>
+			<email>marcio.endo@objectos.com.br</email>
+		</developer>
+	</developers>
+
+	<modules>
+		<module>serasa-relato</module>
+	</modules>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<objectos.io.version>0.1.0</objectos.io.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>br.com.objectos</groupId>
+				<artifactId>io-flat</artifactId>
+				<version>${objectos.io.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+		
+</project>
