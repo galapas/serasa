@@ -44,7 +44,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<objectos.io.version>0.1.0</objectos.io.version>
+		<objectos.io.version>0.2.0-SNAPSHOT</objectos.io.version>
 	</properties>
 
 	<dependencyManagement>
