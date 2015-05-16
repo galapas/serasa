@@ -30,6 +30,7 @@ import br.com.objectos.io.flat.annotation.Prefix;
 import br.com.objectos.io.flat.annotation.RecordPojo;
 import br.com.objectos.io.flat.annotation.Text;
 import br.com.objectos.io.flat.annotation.WhenAbsent;
+import br.com.objectos.io.flat.annotation.WhenZero;
 import br.com.objectos.serasa.format.CadastroRfbFormatter;
 import br.com.objectos.serasa.format.CnpjFormatter;
 import br.com.objectos.way.base.br.CadastroRFB;
@@ -58,6 +59,7 @@ public abstract class TituloNormal {
   abstract LocalDate dataEmissao();
 
   @DecimalFormat(precision = 13, scale = 2, options = { DecimalOption.ZEROFILL })
+  @WhenZero("9999999999999")
   abstract double valorNominal();
 
   @LocalDateFormat(LocalDatePattern.YYYYMMDD)

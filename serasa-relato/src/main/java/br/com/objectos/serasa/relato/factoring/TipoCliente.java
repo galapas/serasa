@@ -15,6 +15,9 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 import br.com.objectos.io.flat.FlatEnum;
 
 /**
@@ -32,6 +35,14 @@ public enum TipoCliente implements FlatEnum {
 
   private TipoCliente(String flatValue) {
     this.flatValue = flatValue;
+  }
+
+  public static TipoCliente of(LocalDate clienteDesde, LocalDate dataBase) {
+    Period period = Period.between(clienteDesde, dataBase);
+    int years = period.getYears();
+    return years < 1
+        ? MENOS_UM_ANO
+        : ANTIGO;
   }
 
   @Override

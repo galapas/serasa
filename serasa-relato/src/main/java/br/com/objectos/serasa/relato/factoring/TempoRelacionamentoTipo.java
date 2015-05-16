@@ -16,6 +16,8 @@
 package br.com.objectos.serasa.relato.factoring;
 
 import br.com.objectos.io.flat.FlatEnum;
+import br.com.objectos.way.base.br.CadastroRFB;
+import br.com.objectos.way.base.br.Cnpj;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
@@ -30,6 +32,10 @@ public enum TempoRelacionamentoTipo implements FlatEnum {
 
   private TempoRelacionamentoTipo(String flatValue) {
     this.flatValue = flatValue;
+  }
+
+  public static TempoRelacionamentoTipo of(CadastroRFB cadastroRfb) {
+    return cadastroRfb instanceof Cnpj ? CNPJ : CPF;
   }
 
   @Override
