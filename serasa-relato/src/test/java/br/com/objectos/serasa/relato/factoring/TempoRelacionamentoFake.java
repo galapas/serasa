@@ -16,13 +16,24 @@
 package br.com.objectos.serasa.relato.factoring;
 
 import java.time.LocalDate;
+import java.util.List;
 
+import br.com.objectos.way.base.br.Cnpj;
 import br.com.objectos.way.base.br.Cpf;
+
+import com.google.common.collect.ImmutableList;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
 class TempoRelacionamentoFake {
+
+  public static final TempoRelacionamento SACADO_PJ_0001 = TempoRelacionamento.builder()
+      .cadastroSacado(Cnpj.valueOf(14853210000137l))
+      .tipo(TempoRelacionamentoTipo.CNPJ)
+      .clienteDesde(LocalDate.of(2014, 8, 15))
+      .tipoCliente(TipoCliente.MENOS_UM_ANO)
+      .build();
 
   public static final TempoRelacionamento SACADO_PF_0001 = TempoRelacionamento.builder()
       .cadastroSacado(Cpf.valueOf(8261431649l))
@@ -30,8 +41,24 @@ class TempoRelacionamentoFake {
       .clienteDesde(LocalDate.of(2010, 1, 1))
       .tipoCliente(TipoCliente.ANTIGO)
       .build();
+  public static final TempoRelacionamento SACADO_PF_0002 = TempoRelacionamento.builder()
+      .cadastroSacado(Cpf.valueOf(8261431649l))
+      .tipo(TempoRelacionamentoTipo.CPF)
+      .clienteDesde(LocalDate.of(2012, 1, 1))
+      .tipoCliente(TipoCliente.ANTIGO)
+      .build();
+
+  private static final List<TempoRelacionamento> list = ImmutableList.<TempoRelacionamento> builder()
+      .add(SACADO_PJ_0001)
+      .add(SACADO_PF_0001)
+      .add(SACADO_PF_0002)
+      .build();
 
   private TempoRelacionamentoFake() {
+  }
+
+  public static List<TempoRelacionamento> list() {
+    return list;
   }
 
 }

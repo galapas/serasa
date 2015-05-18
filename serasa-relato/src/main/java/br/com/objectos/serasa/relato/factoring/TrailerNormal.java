@@ -21,12 +21,13 @@ import br.com.objectos.io.flat.annotation.IntegerFormat;
 import br.com.objectos.io.flat.annotation.IntegerOption;
 import br.com.objectos.io.flat.annotation.Prefix;
 import br.com.objectos.io.flat.annotation.RecordPojo;
+import br.com.objectos.way.core.testing.Testable;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
 @RecordPojo
-public abstract class TrailerNormal {
+public abstract class TrailerNormal implements Testable<TrailerNormal> {
 
   @Prefix
   @Fixed("99")

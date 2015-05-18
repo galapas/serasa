@@ -113,4 +113,8 @@ public abstract class TituloConciliacao {
     return new TituloConciliacaoBuilderPojo();
   }
 
+  void addTo(TrailerConciliacaoHelper helper) {
+    tipo().addTo(helper);
+  }
+
 }

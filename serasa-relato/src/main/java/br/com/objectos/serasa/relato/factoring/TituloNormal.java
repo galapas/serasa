@@ -118,4 +118,8 @@ public abstract class TituloNormal {
     return new TituloNormalBuilderPojo();
   }
 
+  void addTo(TrailerNormalHelper helper) {
+    tipo().addTo(helper);
+  }
+
 }

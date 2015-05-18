@@ -24,9 +24,19 @@ import br.com.objectos.way.base.br.Cnpj;
  */
 public enum TempoRelacionamentoTipo implements FlatEnum {
 
-  CNPJ("01"),
+  CNPJ("01") {
+    @Override
+    void addTo(TrailerNormalHelper helper) {
+      helper.tempoRelacionamentoPj();
+    }
+  },
 
-  CPF("08");
+  CPF("08") {
+    @Override
+    void addTo(TrailerNormalHelper helper) {
+      helper.tempoRelacionamentoPf();
+    }
+  };
 
   private final String flatValue;
 
@@ -42,5 +52,7 @@ public enum TempoRelacionamentoTipo implements FlatEnum {
   public String flatValue() {
     return flatValue;
   }
+
+  abstract void addTo(TrailerNormalHelper helper);
 
 }

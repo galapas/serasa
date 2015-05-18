@@ -15,6 +15,8 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
+import java.util.List;
+
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
@@ -27,8 +29,27 @@ public class Trailers {
     return TrailerConciliacao.builder();
   }
 
+  public static TrailerConciliacao conciliacao(List<TituloConciliacao> tituloList) {
+    TrailerConciliacaoHelper helper = new TrailerConciliacaoHelper();
+    for (TituloConciliacao titulo : tituloList) {
+      titulo.addTo(helper);
+    }
+    return helper.build();
+  }
+
   public static TrailerNormalBuilder normal() {
     return TrailerNormal.builder();
+  }
+
+  public static TrailerNormal normal(List<TempoRelacionamento> tempoList, List<TituloNormal> tituloList) {
+    TrailerNormalHelper helper = new TrailerNormalHelper();
+    for (TempoRelacionamento tempo : tempoList) {
+      tempo.addTo(helper);
+    }
+    for (TituloNormal titulo : tituloList) {
+      titulo.addTo(helper);
+    }
+    return helper.build();
   }
 
 }

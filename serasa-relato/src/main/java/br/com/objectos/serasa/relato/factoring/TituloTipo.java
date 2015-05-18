@@ -24,9 +24,29 @@ import br.com.objectos.way.base.br.Cnpj;
  */
 public enum TituloTipo implements FlatEnum {
 
-  CNPJ("05"),
+  CNPJ("05") {
+    @Override
+    void addTo(TrailerConciliacaoHelper helper) {
+      helper.titulosPj();
+    }
 
-  CPF("09");
+    @Override
+    void addTo(TrailerNormalHelper helper) {
+      helper.titulosPj();
+    }
+  },
+
+  CPF("09") {
+    @Override
+    void addTo(TrailerConciliacaoHelper helper) {
+      helper.titulosPf();
+    }
+
+    @Override
+    void addTo(TrailerNormalHelper helper) {
+      helper.titulosPf();
+    }
+  };
 
   private final String flatValue;
 
@@ -42,5 +62,9 @@ public enum TituloTipo implements FlatEnum {
   public String flatValue() {
     return flatValue;
   }
+
+  abstract void addTo(TrailerConciliacaoHelper helper);
+
+  abstract void addTo(TrailerNormalHelper helper);
 
 }

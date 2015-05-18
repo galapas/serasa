@@ -16,10 +16,13 @@
 package br.com.objectos.serasa.relato.factoring;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 import br.com.objectos.way.base.br.Cnpj;
 import br.com.objectos.way.base.br.Cpf;
+
+import com.google.common.collect.ImmutableList;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
@@ -40,8 +43,46 @@ class TituloNormalFake {
       .tipoTitulo(TipoTitulo.DUPLICATA)
       .tipoInformacao(TipoInformacao.SACADO_CEDENTE)
       .build();
+  public static final TituloNormal TITULO_0002 = TituloNormal.builder()
+      .cadastroSacado(Cnpj.valueOf(14853210000137l))
+      .tipo(TituloTipo.CNPJ)
+      .numeroTitulo("0002")
+      .dataEmissao(LocalDate.of(2015, 2, 14))
+      .valorNominal(123.45)
+      .dataVencimento(LocalDate.of(2015, 5, 31))
+      .dataPagamento(Optional.<LocalDate> empty())
+      .hashD("")
+      .numeroTituloLongo("")
+      .cnpjCedente(Cnpj.valueOf(80161698000166l))
+      .tipoTitulo(TipoTitulo.DUPLICATA)
+      .tipoInformacao(TipoInformacao.SACADO_CEDENTE)
+      .build();
+  public static final TituloNormal TITULO_0003 = TituloNormal.builder()
+      .cadastroSacado(Cnpj.valueOf(23442693000178l))
+      .tipo(TituloTipo.CNPJ)
+      .numeroTitulo("0003")
+      .dataEmissao(LocalDate.of(2015, 2, 14))
+      .valorNominal(123.45)
+      .dataVencimento(LocalDate.of(2015, 5, 31))
+      .dataPagamento(Optional.<LocalDate> empty())
+      .hashD("")
+      .numeroTituloLongo("")
+      .cnpjCedente(Cnpj.valueOf(80161698000166l))
+      .tipoTitulo(TipoTitulo.DUPLICATA)
+      .tipoInformacao(TipoInformacao.SACADO_CEDENTE)
+      .build();
+
+  private static final List<TituloNormal> list = ImmutableList.<TituloNormal> builder()
+      .add(TITULO_0001)
+      .add(TITULO_0002)
+      .add(TITULO_0003)
+      .build();
 
   private TituloNormalFake() {
+  }
+
+  public static List<TituloNormal> list() {
+    return list;
   }
 
 }

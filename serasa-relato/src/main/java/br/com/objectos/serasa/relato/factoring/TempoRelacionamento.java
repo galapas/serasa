@@ -69,4 +69,8 @@ public abstract class TempoRelacionamento {
     return new TempoRelacionamentoBuilderPojo();
   }
 
+  void addTo(TrailerNormalHelper helper) {
+    tipo().addTo(helper);
+  }
+
 }
