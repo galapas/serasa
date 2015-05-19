@@ -15,6 +15,7 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
+import java.io.Reader;
 import java.util.List;
 
 import br.com.objectos.io.flat.annotation.FlatFilePojo;
@@ -44,6 +45,14 @@ public abstract class Retorno {
 
   public static RetornoBuilder builder() {
     return new RetornoBuilderPojo();
+  }
+
+  public static Retorno parse(Reader input) {
+    return RetornoParser.get().parse(input);
+  }
+
+  public static Retorno parse(String input) {
+    return RetornoParser.get().parse(input);
   }
 
 }
