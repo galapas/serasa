@@ -47,11 +47,11 @@ public abstract class Retorno {
     return new RetornoBuilderPojo();
   }
 
-  public static Retorno parse(Reader input) {
+  public static Retorno parse(Reader input) throws RetornoParseException {
     return RetornoParser.get().parse(input);
   }
 
-  public static Retorno parse(String input) {
+  public static Retorno parse(String input) throws RetornoParseException {
     return RetornoParser.get().parse(input);
   }
 
