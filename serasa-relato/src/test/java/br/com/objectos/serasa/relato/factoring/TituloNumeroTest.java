@@ -64,5 +64,4 @@ public class TituloNumeroTest {
     assertThat(res, isEqualTo(ans));
   }
 
-
 }

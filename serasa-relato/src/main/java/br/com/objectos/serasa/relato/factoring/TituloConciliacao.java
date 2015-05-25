@@ -114,7 +114,7 @@ public abstract class TituloConciliacao {
   }
 
   public String numero() {
-    return numeroTitulo();
+    return tipoTitulo().tituloNumeroConciliacao(this);
   }
 
   void addTo(TrailerConciliacaoHelper helper) {

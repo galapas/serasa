@@ -16,14 +16,31 @@
 package br.com.objectos.serasa.relato.factoring;
 
 import static br.com.objectos.way.core.testing.WayMatchers.equalTo;
+import static br.com.objectos.way.core.testing.WayMatchers.hasToString;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
 public class TituloConciliacaoTest {
+
+  @DataProvider
+  public Object[][] numeroProvider() {
+    return new Object[][] {
+        { TituloConciliacaoFake.TITULO_0001, "0001" },
+        { TituloConciliacaoFake.TITULO_0002, "DUPLICATA-0002" },
+        { TituloConciliacaoFake.TITULO_0003, " 12345" }
+    };
+  }
+
+  @Test(dataProvider = "numeroProvider")
+  public void numero(TituloConciliacao titulo, String expected) {
+    String res = titulo.numero();
+    assertThat(res, hasToString(expected));
+  }
 
   @Test
   public void size() {

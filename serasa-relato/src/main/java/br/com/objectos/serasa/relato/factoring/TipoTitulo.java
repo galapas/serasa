@@ -24,7 +24,12 @@ public enum TipoTitulo implements FlatEnum {
 
   DUPLICATA("DP"),
 
-  CHEQUE("CH"),
+  CHEQUE("CH") {
+    @Override
+    String tituloNumeroConciliacao(TituloConciliacao titulo) {
+      return titulo.numeroTituloLongo().substring(11, 11 + 6);
+    }
+  },
 
   CARNE("CN"),
 
@@ -39,6 +44,10 @@ public enum TipoTitulo implements FlatEnum {
   @Override
   public String flatValue() {
     return flatValue;
+  }
+
+  String tituloNumeroConciliacao(TituloConciliacao titulo) {
+    return "#D".equals(titulo.hashD()) ? titulo.numeroTituloLongo() : titulo.numeroTitulo();
   }
 
 }

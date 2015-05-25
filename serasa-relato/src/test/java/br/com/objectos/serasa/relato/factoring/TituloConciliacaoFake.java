@@ -39,6 +39,34 @@ class TituloConciliacaoFake {
       .tipoTitulo(TipoTitulo.DUPLICATA)
       .tipoInformacao(TipoInformacao.SACADO_CEDENTE)
       .build();
+  public static final TituloConciliacao TITULO_0002 = TituloConciliacao.builder()
+      .cadastroSacado(Cpf.valueOf(8261431649l))
+      .tipo(TituloTipo.CPF)
+      .numeroTitulo("")
+      .dataEmissao(LocalDate.of(2015, 2, 14))
+      .valorNominal(123.45)
+      .dataVencimento(LocalDate.of(2015, 5, 31))
+      .dataPagamento(DataPagamento.empty())
+      .hashD("#D")
+      .numeroTituloLongo("DUPLICATA-0002")
+      .cnpjCedente(Cnpj.valueOf(80161698000166l))
+      .tipoTitulo(TipoTitulo.DUPLICATA)
+      .tipoInformacao(TipoInformacao.SACADO_CEDENTE)
+      .build();
+  public static final TituloConciliacao TITULO_0003 = TituloConciliacao.builder()
+      .cadastroSacado(Cpf.valueOf(8261431649l))
+      .tipo(TituloTipo.CPF)
+      .numeroTitulo("")
+      .dataEmissao(LocalDate.of(2015, 2, 14))
+      .valorNominal(123.45)
+      .dataVencimento(LocalDate.of(2015, 5, 31))
+      .dataPagamento(DataPagamento.empty())
+      .hashD("#D")
+      .numeroTituloLongo("2374567     12345         987   ")
+      .cnpjCedente(Cnpj.valueOf(80161698000166l))
+      .tipoTitulo(TipoTitulo.CHEQUE)
+      .tipoInformacao(TipoInformacao.SACADO_CEDENTE)
+      .build();
 
   private TituloConciliacaoFake() {
   }
