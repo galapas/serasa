@@ -15,6 +15,7 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
+import java.io.Reader;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Stream;
@@ -40,6 +41,14 @@ public abstract class RemessaConciliacao implements WritableFlatFile {
 
   public static RemessaConciliacaoBuilder builder() {
     return new RemessaConciliacaoBuilderPojo();
+  }
+
+  public static RemessaConciliacao parse(Reader input) throws RemessaConciliacaoParseException {
+    return RemessaConciliacaoParser.get().parse(input);
+  }
+
+  public static RemessaConciliacao parse(String input) throws RemessaConciliacaoParseException {
+    return RemessaConciliacaoParser.get().parse(input);
   }
 
   public Cnpj cnpj() {
