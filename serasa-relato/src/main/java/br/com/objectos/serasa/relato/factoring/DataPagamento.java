@@ -18,10 +18,13 @@ package br.com.objectos.serasa.relato.factoring;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import br.com.objectos.way.core.testing.Testable;
+import br.com.objectos.way.core.testing.Testables;
+
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-public class DataPagamento {
+public class DataPagamento implements Testable<DataPagamento> {
 
   private final LocalDate value;
 
@@ -36,6 +39,17 @@ public class DataPagamento {
   public static DataPagamento of(int year, int month, int day) {
     LocalDate value = LocalDate.of(year, month, day);
     return new DataPagamento(value);
+  }
+
+  public static DataPagamento of(LocalDate value) {
+    return new DataPagamento(value);
+  }
+
+  @Override
+  public boolean isEqual(DataPagamento o) {
+    return Testables.isEqualHelper()
+        .equal(value, o.value)
+        .result();
   }
 
   public boolean isPresent() {

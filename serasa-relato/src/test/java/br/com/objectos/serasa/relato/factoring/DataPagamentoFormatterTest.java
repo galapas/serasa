@@ -15,33 +15,34 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import java.time.LocalDate;
+import static br.com.objectos.way.core.testing.WayMatchers.isEqualTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
-import br.com.objectos.io.flat.CustomFormatter;
-import br.com.objectos.io.flat.annotation.LocalDatePattern;
+import org.testng.annotations.Test;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-public class DataPagamentoFormatter implements CustomFormatter<DataPagamento> {
+public class DataPagamentoFormatterTest {
 
-  @Override
-  public DataPagamento parse(String text) {
-    switch (text.trim()) {
-    case "":
-    case "99999999":
-      return DataPagamento.empty();
+  private final DataPagamentoFormatter formatter = new DataPagamentoFormatter();
 
-    default:
-      LocalDate value = LocalDatePattern.YYYYMMDD.parse(text);
-      return DataPagamento.of(value);
-
-    }
+  @Test
+  public void blank() {
+    DataPagamento res = formatter.parse("");
+    assertThat(res, isEqualTo(DataPagamento.empty()));
   }
 
-  @Override
-  public String write(DataPagamento value) {
-    return value.write();
+  @Test
+  public void empty() {
+    DataPagamento res = formatter.parse("99999999");
+    assertThat(res, isEqualTo(DataPagamento.empty()));
+  }
+
+  @Test
+  public void present() {
+    DataPagamento res = formatter.parse("20150525");
+    assertThat(res, isEqualTo(DataPagamento.of(2015, 5, 25)));
   }
 
 }
