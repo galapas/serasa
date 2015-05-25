@@ -41,13 +41,13 @@ public abstract class HeaderConciliacao {
   abstract String identificacao();
 
   @CustomFormat(length = 14, formatter = CnpjFormatter.class)
-  abstract Cnpj cnpj();
+  public abstract Cnpj cnpj();
 
   @Fixed("CONCILIA")
   abstract String concilia();
 
   @LocalDateFormat(LocalDatePattern.YYYYMMDD)
-  abstract LocalDate dataFinal();
+  public abstract LocalDate dataFinal();
 
   @Fixed("D")
   abstract String periodicidade();

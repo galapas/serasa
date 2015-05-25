@@ -44,43 +44,43 @@ public abstract class TituloConciliacao {
   abstract String id();
 
   @CustomFormat(length = 14, formatter = CadastroRfbFormatter.class)
-  abstract CadastroRFB cadastroSacado();
+  public abstract CadastroRFB cadastroSacado();
 
   @FlatEnumFormat(length = 2)
   abstract TituloTipo tipo();
 
   @Text(length = 10)
-  abstract String numeroTitulo();
+  public abstract String numeroTitulo();
 
   @LocalDateFormat(LocalDatePattern.YYYYMMDD)
-  abstract LocalDate dataEmissao();
+  public abstract LocalDate dataEmissao();
 
   @DecimalFormat(precision = 13, scale = 2, options = { DecimalOption.ZEROFILL })
-  abstract double valorNominal();
+  public abstract double valorNominal();
 
   @LocalDateFormat(LocalDatePattern.YYYYMMDD)
-  abstract LocalDate dataVencimento();
+  public abstract LocalDate dataVencimento();
 
   @CustomFormat(length = 8, formatter = DataPagamentoFormatter.class)
   abstract DataPagamento dataPagamento();
 
   @Text(length = 2)
-  abstract String hashD();
+  public abstract String hashD();
 
   @Text(length = 32)
-  abstract String numeroTituloLongo();
+  public abstract String numeroTituloLongo();
 
   @Fill(character = ' ', length = 1)
   abstract String brancos0();
 
   @CustomFormat(length = 14, formatter = CnpjFormatter.class)
-  abstract Cnpj cnpjCedente();
+  public abstract Cnpj cnpjCedente();
 
   @Fixed("0")
   abstract String ajusteCnpjCedente();
 
   @FlatEnumFormat(length = 2)
-  abstract TipoTitulo tipoTitulo();
+  public abstract TipoTitulo tipoTitulo();
 
   @Fill(character = ' ', length = 1)
   abstract String reservado0();
@@ -89,7 +89,7 @@ public abstract class TituloConciliacao {
   abstract String tipoNegocio();
 
   @FlatEnumFormat(length = 2)
-  abstract TipoInformacao tipoInformacao();
+  public abstract TipoInformacao tipoInformacao();
 
   @Fixed("CS")
   abstract String tipoCarteira();
@@ -111,6 +111,10 @@ public abstract class TituloConciliacao {
 
   public static TituloConciliacaoBuilder builder() {
     return new TituloConciliacaoBuilderPojo();
+  }
+
+  public String numero() {
+    return numeroTitulo();
   }
 
   void addTo(TrailerConciliacaoHelper helper) {

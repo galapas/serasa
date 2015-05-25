@@ -15,10 +15,13 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Stream;
 
 import br.com.objectos.io.flat.WritableFlatFile;
 import br.com.objectos.io.flat.annotation.FlatFilePojo;
+import br.com.objectos.way.base.br.Cnpj;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
@@ -37,6 +40,26 @@ public abstract class RemessaConciliacao implements WritableFlatFile {
 
   public static RemessaConciliacaoBuilder builder() {
     return new RemessaConciliacaoBuilderPojo();
+  }
+
+  public Cnpj cnpj() {
+    return header().cnpj();
+  }
+
+  public LocalDate dataFinal() {
+    return header().dataFinal();
+  }
+
+  public Stream<TituloConciliacao> tituloStream() {
+    return tituloList().stream();
+  }
+
+  public int titulosPf() {
+    return trailer().titulosPf();
+  }
+
+  public int titulosPj() {
+    return trailer().titulosPj();
   }
 
 }

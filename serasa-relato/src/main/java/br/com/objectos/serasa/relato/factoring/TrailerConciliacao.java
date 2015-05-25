@@ -39,13 +39,13 @@ public abstract class TrailerConciliacao {
   abstract String brancos0();
 
   @IntegerFormat(length = 11, options = { IntegerOption.ZEROFILL })
-  abstract int titulosPj();
+  public abstract int titulosPj();
 
   @Fill(character = '0', length = 11)
   abstract String tempoRelacionamentoPf();
 
   @IntegerFormat(length = 11, options = { IntegerOption.ZEROFILL })
-  abstract int titulosPf();
+  public abstract int titulosPf();
 
   @Fill(character = ' ', length = 10)
   abstract String reservado();
