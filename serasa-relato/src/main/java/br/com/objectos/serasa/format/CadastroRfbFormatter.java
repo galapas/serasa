@@ -19,6 +19,7 @@ import br.com.objectos.io.flat.CustomFormatter;
 import br.com.objectos.way.base.br.CadastroRFB;
 import br.com.objectos.way.base.br.Cnpj;
 import br.com.objectos.way.base.br.Cpf;
+import br.com.objectos.way.base.br.ExcecaoDeCnpjInvalido;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
@@ -36,7 +37,11 @@ public class CadastroRfbFormatter implements CustomFormatter<CadastroRFB> {
 
   @Override
   public CadastroRFB parse(String text) {
-    return null;
+    try {
+      return CNPJ.parse(text);
+    } catch (ExcecaoDeCnpjInvalido e) {
+      return CPF.parse(text);
+    }
   }
 
   @Override

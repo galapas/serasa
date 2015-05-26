@@ -31,7 +31,8 @@ public class CnpjFormatter implements CustomFormatter<Cnpj> {
 
   @Override
   public Cnpj parse(String text) {
-    return null;
+    long value = Long.parseLong(text, 10);
+    return Cnpj.valueOf(value);
   }
 
   @Override

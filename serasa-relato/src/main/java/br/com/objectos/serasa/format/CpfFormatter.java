@@ -31,7 +31,9 @@ public class CpfFormatter implements CustomFormatter<Cpf> {
 
   @Override
   public Cpf parse(String text) {
-    return null;
+    String core = text.substring(0, 11);
+    long value = Long.parseLong(core, 10);
+    return Cpf.valueOf(value);
   }
 
   @Override

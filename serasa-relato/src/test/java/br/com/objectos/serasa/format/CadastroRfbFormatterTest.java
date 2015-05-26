@@ -33,14 +33,20 @@ public class CadastroRfbFormatterTest {
   private final CadastroRfbFormatter formatter = CadastroRfbFormatter.get();
 
   @DataProvider
-  public Object[][] writeProvider() {
+  public Object[][] valueProvider() {
     return new Object[][] {
         { Cnpj.valueOf(7430629000110l), "07430629000110" },
         { Cpf.valueOf(8261431649l), "08261431649000" }
     };
   }
 
-  @Test(dataProvider = "writeProvider")
+  @Test(dataProvider = "valueProvider")
+  public void parse(CadastroRFB esperado, String text) {
+    CadastroRFB res = formatter.parse(text);
+    assertThat(res, equalTo(esperado));
+  }
+
+  @Test(dataProvider = "valueProvider")
   public void write(CadastroRFB cadastro, String esperado) {
     String res = formatter.write(cadastro);
     assertThat(res, equalTo(esperado));

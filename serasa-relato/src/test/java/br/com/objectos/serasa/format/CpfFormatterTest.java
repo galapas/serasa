@@ -30,6 +30,13 @@ public class CpfFormatterTest {
   private final CpfFormatter formatter = CpfFormatter.get();
 
   @Test
+  public void parse() {
+    String text = "08261431649000";
+    Cpf res = formatter.parse(text);
+    assertThat(res, equalTo(Cpf.valueOf(8261431649l)));
+  }
+
+  @Test
   public void write() {
     Cpf cpf = Cpf.valueOf(8261431649l);
     String res = formatter.write(cpf);

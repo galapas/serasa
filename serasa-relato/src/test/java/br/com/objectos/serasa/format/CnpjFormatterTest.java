@@ -18,7 +18,6 @@ package br.com.objectos.serasa.format;
 import static br.com.objectos.way.core.testing.WayMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-import br.com.objectos.serasa.format.CnpjFormatter;
 import br.com.objectos.way.base.br.Cnpj;
 
 import org.testng.annotations.Test;
@@ -29,6 +28,13 @@ import org.testng.annotations.Test;
 public class CnpjFormatterTest {
 
   private final CnpjFormatter formatter = CnpjFormatter.get();
+
+  @Test
+  public void parse() {
+    String text = "07430629000110";
+    Cnpj res = formatter.parse(text);
+    assertThat(res, equalTo(Cnpj.valueOf(7430629000110l)));
+  }
 
   @Test
   public void write() {
