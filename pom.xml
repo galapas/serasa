@@ -8,7 +8,7 @@
 	</parent>
 	
 	<artifactId>serasa</artifactId>
-	<version>0.1.1-SNAPSHOT</version>
+	<version>0.2.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 		
 	<name>objectos :: serasa</name>
@@ -44,7 +44,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<objectos.io.version>0.2.0-SNAPSHOT</objectos.io.version>
+		<objectos.io.version>0.2.0</objectos.io.version>
 	</properties>
 
 	<dependencyManagement>
