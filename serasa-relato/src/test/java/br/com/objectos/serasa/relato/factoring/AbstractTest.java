@@ -15,27 +15,11 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import static br.com.objectos.testing.MoreMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
-
-import org.testng.annotations.Test;
-
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-public class ProcessamentoTest extends AbstractTest {
+abstract class AbstractTest {
 
-  @Test
-  public void parse() {
-    ASSERT.parseOne("retorno-processamento02.txt")
-        .with(ProcessamentoParser.get())
-        .resultIsEqualTo(ProcessamentoFake.PROCESSAMENTO_02);
-  }
-
-  @Test
-  public void size() {
-    String res = ProcessamentoFake.REMESSA_OK.toString();
-    assertThat(res.length(), equalTo(190 + 1));
-  }
+  public static final SerasaAssert ASSERT = SerasaAssert.at("/txt");
 
 }

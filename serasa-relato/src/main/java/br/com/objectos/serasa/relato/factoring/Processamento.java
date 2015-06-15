@@ -15,6 +15,7 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
+import br.com.objectos.core.testing.Testable;
 import br.com.objectos.io.flat.annotation.Fixed;
 import br.com.objectos.io.flat.annotation.Prefix;
 import br.com.objectos.io.flat.annotation.RecordPojo;
@@ -24,7 +25,7 @@ import br.com.objectos.io.flat.annotation.Text;
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
 @RecordPojo
-public abstract class Processamento {
+public abstract class Processamento implements Testable<Processamento> {
 
   @Prefix
   @Fixed("77")
