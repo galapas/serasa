@@ -15,8 +15,8 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import br.com.objectos.way.core.auto.AutoPojo;
-import br.com.objectos.way.core.testing.Testable;
+import br.com.objectos.core.auto.AutoPojo;
+import br.com.objectos.core.testing.Testable;
 
 import com.google.common.base.Strings;
 
