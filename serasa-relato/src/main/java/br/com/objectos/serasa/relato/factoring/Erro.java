@@ -15,6 +15,7 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
+import br.com.objectos.core.testing.Testable;
 import br.com.objectos.io.flat.annotation.Fill;
 import br.com.objectos.io.flat.annotation.Fixed;
 import br.com.objectos.io.flat.annotation.IntegerFormat;
@@ -26,7 +27,7 @@ import br.com.objectos.io.flat.annotation.Text;
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
 @RecordPojo
-public abstract class Erro {
+public abstract class Erro implements Testable<Erro> {
 
   @Prefix
   @Fixed("88")
@@ -38,11 +39,17 @@ public abstract class Erro {
   @Fill(character = ' ', length = 2)
   abstract String brancos0();
 
-  @Text(length = 70)
+  @Text(length = 55)
   abstract String descricao();
 
-  @Fill(character = ' ', length = 113)
+  @Fill(character = ' ', length = 1)
   abstract String brancos1();
+
+  @IntegerFormat(length = 9)
+  abstract int quantidade();
+
+  @Fill(character = ' ', length = 118)
+  abstract String brancos2();
 
   Erro() {
   }

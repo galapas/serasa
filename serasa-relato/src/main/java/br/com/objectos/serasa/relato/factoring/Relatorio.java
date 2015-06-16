@@ -15,7 +15,7 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import br.com.objectos.io.flat.annotation.Fill;
+import br.com.objectos.core.testing.Testable;
 import br.com.objectos.io.flat.annotation.Fixed;
 import br.com.objectos.io.flat.annotation.Prefix;
 import br.com.objectos.io.flat.annotation.RecordPojo;
@@ -25,20 +25,14 @@ import br.com.objectos.io.flat.annotation.Text;
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
 @RecordPojo
-public abstract class Relatorio {
+public abstract class Relatorio implements Testable<Relatorio> {
 
   @Prefix
   @Fixed("85")
   abstract String id();
 
-  @Fill(character = ' ', length = 1)
-  abstract String brancos0();
-
-  @Text(length = 72)
+  @Text(length = 188)
   abstract String texto();
-
-  @Fill(character = ' ', length = 115)
-  abstract String brancos1();
 
   Relatorio() {
   }

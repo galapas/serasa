@@ -28,7 +28,7 @@ public abstract class Retorno {
 
   abstract Processamento processamento();
 
-  abstract Relatorio relatorio();
+  abstract List<Relatorio> relatorioList();
 
   abstract List<Erro> erroList();
 
@@ -36,9 +36,9 @@ public abstract class Retorno {
 
   abstract List<TituloProcessado> tituloProcessadoList();
 
-  abstract TotalCliente totalCliente();
+  abstract List<TotalCliente> totalCliente();
 
-  abstract TotalPagamento totalPagamento();
+  abstract List<TotalPagamento> totalPagamento();
 
   Retorno() {
   }

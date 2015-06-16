@@ -15,7 +15,7 @@
  */
 package br.com.objectos.serasa.format;
 
-import static br.com.objectos.way.core.testing.WayMatchers.equalTo;
+import static br.com.objectos.testing.MoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import br.com.objectos.way.base.br.Cpf;

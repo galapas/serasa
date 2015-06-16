@@ -15,7 +15,7 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import static br.com.objectos.way.core.testing.WayMatchers.isEqualTo;
+import static br.com.objectos.testing.MoreMatchers.isEqualTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.testng.annotations.Test;

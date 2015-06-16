@@ -18,8 +18,8 @@ package br.com.objectos.serasa.relato.factoring;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import br.com.objectos.way.core.testing.Testable;
-import br.com.objectos.way.core.testing.Testables;
+import br.com.objectos.core.testing.Testable;
+import br.com.objectos.core.testing.Testables;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)

@@ -13,34 +13,13 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package br.com.objectos.serasa.format;
-
-import static br.com.objectos.testing.MoreMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
-
-import br.com.objectos.way.base.br.Cnpj;
-
-import org.testng.annotations.Test;
+package br.com.objectos.serasa.relato.factoring;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-public class CnpjFormatterTest {
+abstract class AbstractTest {
 
-  private final CnpjFormatter formatter = CnpjFormatter.get();
-
-  @Test
-  public void parse() {
-    String text = "07430629000110";
-    Cnpj res = formatter.parse(text);
-    assertThat(res, equalTo(Cnpj.valueOf(7430629000110l)));
-  }
-
-  @Test
-  public void write() {
-    Cnpj cnpj = Cnpj.valueOf(7430629000110l);
-    String res = formatter.write(cnpj);
-    assertThat(res, equalTo("07430629000110"));
-  }
+  public static final SerasaAssert ASSERT = SerasaAssert.at("/txt");
 
 }

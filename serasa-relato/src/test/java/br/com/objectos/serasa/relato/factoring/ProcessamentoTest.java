@@ -15,7 +15,7 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import static br.com.objectos.way.core.testing.WayMatchers.equalTo;
+import static br.com.objectos.testing.MoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.testng.annotations.Test;
@@ -23,7 +23,14 @@ import org.testng.annotations.Test;
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-public class ProcessamentoTest {
+public class ProcessamentoTest extends AbstractTest {
+
+  @Test
+  public void parse() {
+    ASSERT.parseOne("retorno-processamento02.txt")
+        .with(ProcessamentoParser.get())
+        .resultIsEqualTo(ProcessamentoFake.PROCESSAMENTO_02);
+  }
 
   @Test
   public void size() {

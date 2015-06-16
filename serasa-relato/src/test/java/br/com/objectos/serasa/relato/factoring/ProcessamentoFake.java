@@ -20,6 +20,11 @@ package br.com.objectos.serasa.relato.factoring;
  */
 class ProcessamentoFake {
 
+  public static final Processamento PROCESSAMENTO_02 = Processamento.builder()
+      .numero("02")
+      .mensagem("TODA   REMESSA   DESPREZADA   EM:                 12.06.2015")
+      .build();
+
   public static final Processamento REMESSA_OK = Processamento.builder()
       .numero("01")
       .mensagem("3 - remessa total processada ok em dd/mm/aaaa")
