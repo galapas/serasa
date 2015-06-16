@@ -16,25 +16,32 @@
 package br.com.objectos.serasa.relato.factoring;
 
 import java.util.List;
-
-import br.com.objectos.core.auto.AutoPojo;
-import br.com.objectos.core.testing.Testable;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-@AutoPojo
-public abstract class RegistroSintetico implements Testable<RegistroSintetico> {
+class ErroMap {
 
-  public abstract String registro();
+  private final Map<Integer, Erro> numeroMap;
 
-  public abstract List<Erro> erroList();
-
-  RegistroSintetico() {
+  private ErroMap(Map<Integer, Erro> numeroMap) {
+    this.numeroMap = numeroMap;
   }
 
-  public static RegistroSinteticoBuilder builder() {
-    return new RegistroSinteticoBuilderPojo();
+  public static ErroMap mapOf(List<Erro> erroList) {
+    Map<Integer, Erro> numeroMap = erroList.stream()
+        .collect(Collectors.toMap(Erro::numero, Function.identity()));
+    return new ErroMap(numeroMap);
+  }
+
+  void addTo(int numero, List<Erro> erroList) {
+    Erro erro = numeroMap.get(numero);
+    if (erro != null) {
+      erroList.add(erro);
+    }
   }
 
 }

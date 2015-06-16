@@ -15,26 +15,22 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import java.util.List;
-
-import br.com.objectos.core.auto.AutoPojo;
-import br.com.objectos.core.testing.Testable;
-
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-@AutoPojo
-public abstract class RegistroSintetico implements Testable<RegistroSintetico> {
+class RegistroSinteticoFake {
 
-  public abstract String registro();
+  public static final RegistroSintetico TITULO_ERRO_FREE = RegistroSintetico.builder()
+      .registro("Sem erros")
+      .erroList()
+      .build();
 
-  public abstract List<Erro> erroList();
+  public static final RegistroSintetico TITULO_ERRO_243_317 = RegistroSintetico.builder()
+      .registro("Erros 243 e 317")
+      .erroList(ErroFake.ERRO_243, ErroFake.ERRO_317)
+      .build();
 
-  RegistroSintetico() {
-  }
-
-  public static RegistroSinteticoBuilder builder() {
-    return new RegistroSinteticoBuilderPojo();
+  private RegistroSinteticoFake() {
   }
 
 }

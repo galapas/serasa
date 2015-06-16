@@ -15,6 +15,9 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
@@ -68,6 +71,40 @@ public abstract class RegistroProcessado {
   @Override
   public String toString() {
     return registro();
+  }
+
+  RegistroSintetico toRegistroSintetico(ErroMap erroMap) {
+    List<Erro> erroList = new ArrayList<>();
+    addErro(erro00(), erroMap, erroList);
+    addErro(erro01(), erroMap, erroList);
+    addErro(erro02(), erroMap, erroList);
+    addErro(erro03(), erroMap, erroList);
+    addErro(erro04(), erroMap, erroList);
+    addErro(erro05(), erroMap, erroList);
+    addErro(erro06(), erroMap, erroList);
+    addErro(erro07(), erroMap, erroList);
+    addErro(erro08(), erroMap, erroList);
+    addErro(erro09(), erroMap, erroList);
+    addErro(erro10(), erroMap, erroList);
+    addErro(erro11(), erroMap, erroList);
+    addErro(erro12(), erroMap, erroList);
+    addErro(erro13(), erroMap, erroList);
+    addErro(erro14(), erroMap, erroList);
+    addErro(erro15(), erroMap, erroList);
+    addErro(erro16(), erroMap, erroList);
+    addErro(erro17(), erroMap, erroList);
+    addErro(erro18(), erroMap, erroList);
+    addErro(erro19(), erroMap, erroList);
+    return RegistroSintetico.builder()
+        .registro(registro())
+        .erroList(erroList)
+        .build();
+  }
+
+  private void addErro(int numero, ErroMap erroMap, List<Erro> erroList) {
+    if (numero != 0) {
+      erroMap.addTo(numero, erroList);
+    }
   }
 
 }

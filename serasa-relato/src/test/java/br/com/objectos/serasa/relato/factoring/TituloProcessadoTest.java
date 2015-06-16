@@ -15,27 +15,32 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import static br.com.objectos.testing.MoreMatchers.equalTo;
+import static br.com.objectos.testing.MoreMatchers.isEqualTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+import java.util.List;
+
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-public class ErroTest extends AbstractTest {
+public class TituloProcessadoTest {
 
-  @Test
-  public void parse() {
-    ASSERT.parseList("retorno-erro02.txt")
-        .with(ErroParser.getMatcher(), ErroParser.get())
-        .resultIsEqualTo(ErroFake.ERRO_LIST_02);
+  @DataProvider
+  public Object[][] toRegistroSinteticoProvider() {
+    return new Object[][] {
+        { TituloProcessadoFake.TITULO_ERRO_FREE, ErroFake.ERRO_LIST_02, RegistroSinteticoFake.TITULO_ERRO_FREE },
+        { TituloProcessadoFake.TITULO_ERRO_243_317, ErroFake.ERRO_LIST_02, RegistroSinteticoFake.TITULO_ERRO_243_317 }
+    };
   }
 
-  @Test
-  public void size() {
-    String res = ErroFake.ERRO_099.toString();
-    assertThat(res.length(), equalTo(190 + 1));
+  @Test(dataProvider = "toRegistroSinteticoProvider")
+  public void to_registro_sintetico(TituloProcessado titulo, List<Erro> erroList, RegistroSintetico expected) {
+    ErroMap erroMap = ErroMap.mapOf(erroList);
+    RegistroSintetico res = titulo.toRegistroSintetico(erroMap);
+    assertThat(res, isEqualTo(expected));
   }
 
 }
