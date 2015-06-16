@@ -32,13 +32,18 @@ public abstract class Relatorio implements Testable<Relatorio> {
   abstract String id();
 
   @Text(length = 188)
-  abstract String texto();
+  public abstract String texto();
 
   Relatorio() {
   }
 
   public static RelatorioBuilder builder() {
     return new RelatorioBuilderPojo();
+  }
+
+  @Override
+  public String toString() {
+    return texto();
   }
 
 }

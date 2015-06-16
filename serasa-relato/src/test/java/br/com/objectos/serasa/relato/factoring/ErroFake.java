@@ -24,18 +24,21 @@ import com.google.common.collect.ImmutableList;
  */
 class ErroFake {
 
-  public static final List<Erro> ERRO_02 = ImmutableList.<Erro> builder()
-      .add(erro(243, "TITULO INFORMADO EM DUPLICIDADE", 3))
-      .add(erro(309, "CNPJ E DIG DO CEDENTE NAO CONFEREM", 57))
-      .add(erro(317, "CODIGO CMC7 INVALIDO PARA O TIPO DOCTO CHEQUE", 9))
-      .add(erro(336, "CMC7 INVALIDO - BANCO INEXISTENTE", 7))
-      .add(erro(337, "CMC7 INVALIDO - NUMERO DO BANCO ZERADO", 1))
-      .build();
-
-  public static final Erro ERRO_99 = Erro.builder()
+  public static final Erro ERRO_099 = Erro.builder()
       .numero(99)
       .descricao("Algum erro genérico número 99")
       .quantidade(1)
+      .build();
+  public static final Erro ERRO_243 = erro(243, "TITULO INFORMADO EM DUPLICIDADE", 3);
+  public static final Erro ERRO_309 = erro(309, "CNPJ E DIG DO CEDENTE NAO CONFEREM", 57);
+  public static final Erro ERRO_317 = erro(317, "CODIGO CMC7 INVALIDO PARA O TIPO DOCTO CHEQUE", 9);
+
+  public static final List<Erro> ERRO_LIST_02 = ImmutableList.<Erro> builder()
+      .add(ERRO_243)
+      .add(ERRO_309)
+      .add(ERRO_317)
+      .add(erro(336, "CMC7 INVALIDO - BANCO INEXISTENTE", 7))
+      .add(erro(337, "CMC7 INVALIDO - NUMERO DO BANCO ZERADO", 1))
       .build();
 
   private ErroFake() {

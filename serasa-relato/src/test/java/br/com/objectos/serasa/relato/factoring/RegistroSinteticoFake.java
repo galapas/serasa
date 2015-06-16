@@ -15,33 +15,22 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import br.com.objectos.core.testing.Testable;
-import br.com.objectos.io.flat.annotation.Fixed;
-import br.com.objectos.io.flat.annotation.Prefix;
-import br.com.objectos.io.flat.annotation.RecordPojo;
-import br.com.objectos.io.flat.annotation.Text;
-
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-@RecordPojo
-public abstract class Processamento implements Testable<Processamento> {
+class RegistroSinteticoFake {
 
-  @Prefix
-  @Fixed("77")
-  abstract String id();
+  public static final RegistroSintetico TITULO_ERRO_FREE = RegistroSintetico.builder()
+      .registro("Sem erros")
+      .erroList()
+      .build();
 
-  @Text(length = 2)
-  public abstract String numero();
+  public static final RegistroSintetico TITULO_ERRO_243_317 = RegistroSintetico.builder()
+      .registro("Erros 243 e 317")
+      .erroList(ErroFake.ERRO_243, ErroFake.ERRO_317)
+      .build();
 
-  @Text(length = 186)
-  public abstract String mensagem();
-
-  Processamento() {
-  }
-
-  public static ProcessamentoBuilder builder() {
-    return new ProcessamentoBuilderPojo();
+  private RegistroSinteticoFake() {
   }
 
 }

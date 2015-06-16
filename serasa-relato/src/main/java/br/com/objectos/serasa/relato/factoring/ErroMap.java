@@ -15,33 +15,33 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import br.com.objectos.core.testing.Testable;
-import br.com.objectos.io.flat.annotation.Fixed;
-import br.com.objectos.io.flat.annotation.Prefix;
-import br.com.objectos.io.flat.annotation.RecordPojo;
-import br.com.objectos.io.flat.annotation.Text;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-@RecordPojo
-public abstract class Processamento implements Testable<Processamento> {
+class ErroMap {
 
-  @Prefix
-  @Fixed("77")
-  abstract String id();
+  private final Map<Integer, Erro> numeroMap;
 
-  @Text(length = 2)
-  public abstract String numero();
-
-  @Text(length = 186)
-  public abstract String mensagem();
-
-  Processamento() {
+  private ErroMap(Map<Integer, Erro> numeroMap) {
+    this.numeroMap = numeroMap;
   }
 
-  public static ProcessamentoBuilder builder() {
-    return new ProcessamentoBuilderPojo();
+  public static ErroMap mapOf(List<Erro> erroList) {
+    Map<Integer, Erro> numeroMap = erroList.stream()
+        .collect(Collectors.toMap(Erro::numero, Function.identity()));
+    return new ErroMap(numeroMap);
+  }
+
+  void addTo(int numero, List<Erro> erroList) {
+    Erro erro = numeroMap.get(numero);
+    if (erro != null) {
+      erroList.add(erro);
+    }
   }
 
 }

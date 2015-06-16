@@ -15,33 +15,33 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import br.com.objectos.core.testing.Testable;
-import br.com.objectos.io.flat.annotation.Fixed;
-import br.com.objectos.io.flat.annotation.Prefix;
-import br.com.objectos.io.flat.annotation.RecordPojo;
-import br.com.objectos.io.flat.annotation.Text;
+import java.util.List;
+
+import br.com.objectos.core.auto.AutoPojo;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-@RecordPojo
-public abstract class Processamento implements Testable<Processamento> {
+@AutoPojo
+public abstract class RetornoSintetico {
 
-  @Prefix
-  @Fixed("77")
-  abstract String id();
+  public abstract boolean valido();
 
-  @Text(length = 2)
-  public abstract String numero();
+  public abstract String processamento();
 
-  @Text(length = 186)
-  public abstract String mensagem();
+  public abstract List<String> relatorioList();
 
-  Processamento() {
+  public abstract List<Erro> erroList();
+
+  public abstract RegistroSintetico header();
+
+  public abstract List<RegistroSintetico> tituloList();
+
+  RetornoSintetico() {
   }
 
-  public static ProcessamentoBuilder builder() {
-    return new ProcessamentoBuilderPojo();
+  public static RetornoSinteticoBuilder builder() {
+    return new RetornoSinteticoBuilderPojo();
   }
 
 }

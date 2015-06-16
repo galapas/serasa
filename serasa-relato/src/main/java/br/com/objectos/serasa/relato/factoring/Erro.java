@@ -34,19 +34,19 @@ public abstract class Erro implements Testable<Erro> {
   abstract String id();
 
   @IntegerFormat(length = 3)
-  abstract int numero();
+  public abstract int numero();
 
   @Fill(character = ' ', length = 2)
   abstract String brancos0();
 
   @Text(length = 55)
-  abstract String descricao();
+  public abstract String descricao();
 
   @Fill(character = ' ', length = 1)
   abstract String brancos1();
 
   @IntegerFormat(length = 9)
-  abstract int quantidade();
+  public abstract int quantidade();
 
   @Fill(character = ' ', length = 118)
   abstract String brancos2();
