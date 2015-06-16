@@ -17,6 +17,7 @@ package br.com.objectos.serasa.relato.factoring;
 
 import java.io.Reader;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import br.com.objectos.io.flat.annotation.FlatFilePojo;
 
@@ -53,6 +54,23 @@ public abstract class Retorno {
 
   public static Retorno parse(String input) throws RetornoParseException {
     return RetornoParser.get().parse(input);
+  }
+
+  public RetornoSintetico toRetornoSintetico() {
+    List<Erro> erroList = erroList();
+    ErroMap erroMap = ErroMap.mapOf(erroList);
+    return RetornoSintetico.builder()
+        .valido(processamento().numero().equals("01"))
+        .processamento(processamento().mensagem())
+        .relatorioList(relatorioList().stream()
+            .map(Relatorio::texto)
+            .collect(Collectors.toList()))
+        .erroList(erroList())
+        .header(headerProcessado().toRegistroSintetico(erroMap))
+        .tituloList(tituloProcessadoList().stream()
+            .map(it -> it.toRegistroSintetico(erroMap))
+            .collect(Collectors.toList()))
+        .build();
   }
 
 }
