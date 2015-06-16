@@ -22,9 +22,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 
 import br.com.objectos.core.testing.Testable;
 import br.com.objectos.io.flat.FlatFileReader;
+import br.com.objectos.io.flat.RecordMatcher;
 import br.com.objectos.io.flat.RecordParser;
 import br.com.objectos.io.flat.Result;
 import br.com.objectos.testing.TestResources;
@@ -46,8 +48,51 @@ class SerasaAssert {
     return new SerasaAssert(dir);
   }
 
+  public ParseList parseList(String name) {
+    return new ParseList(name);
+  }
+
   public ParseOne parseOne(String name) {
     return new ParseOne(name);
+  }
+
+  public class ParseList {
+
+    private final String name;
+
+    public ParseList(String name) {
+      this.name = name;
+    }
+
+    public <T extends Testable<T>> ParseListWith<T> with(RecordMatcher recordMatcher, RecordParser<T> recordParser) {
+      return new ParseListWith<>(recordMatcher, recordParser);
+
+    }
+
+    public class ParseListWith<T extends Testable<T>> {
+
+      private final RecordMatcher recordMatcher;
+      private final RecordParser<T> recordParser;
+
+      public ParseListWith(RecordMatcher recordMatcher, RecordParser<T> recordParser) {
+        this.recordMatcher = recordMatcher;
+        this.recordParser = recordParser;
+      }
+
+      public void resultIsEqualTo(List<T> expectedList) {
+        File file = TestResources.getFile(dir + "/" + name);
+        try (FileReader reader = new FileReader(file)) {
+          Result<List<T>> result = FlatFileReader.get(reader).parseList(recordMatcher, recordParser);
+          assertThat(result.get(), isEqualTo(expectedList));
+        } catch (FileNotFoundException e) {
+          Throwables.propagate(e);
+        } catch (IOException e) {
+          Throwables.propagate(e);
+        }
+      }
+
+    }
+
   }
 
   public class ParseOne {
@@ -86,6 +131,5 @@ class SerasaAssert {
     }
 
   }
-
 
 }

@@ -28,7 +28,7 @@ public abstract class Retorno {
 
   abstract Processamento processamento();
 
-  abstract Relatorio relatorio();
+  abstract List<Relatorio> relatorioList();
 
   abstract List<Erro> erroList();
 

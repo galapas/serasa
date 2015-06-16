@@ -15,17 +15,38 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
+import java.util.List;
+
+import com.google.common.collect.ImmutableList;
+
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
 class ErroFake {
 
-  public static final Erro ERRO_02 = Erro.builder()
-      .numero(2)
-      .descricao("Algum erro genérico número 2")
+  public static final List<Erro> ERRO_02 = ImmutableList.<Erro> builder()
+      .add(erro(243, "TITULO INFORMADO EM DUPLICIDADE", 3))
+      .add(erro(309, "CNPJ E DIG DO CEDENTE NAO CONFEREM", 57))
+      .add(erro(317, "CODIGO CMC7 INVALIDO PARA O TIPO DOCTO CHEQUE", 9))
+      .add(erro(336, "CMC7 INVALIDO - BANCO INEXISTENTE", 7))
+      .add(erro(337, "CMC7 INVALIDO - NUMERO DO BANCO ZERADO", 1))
+      .build();
+
+  public static final Erro ERRO_99 = Erro.builder()
+      .numero(99)
+      .descricao("Algum erro genérico número 99")
+      .quantidade(1)
       .build();
 
   private ErroFake() {
+  }
+
+  private static Erro erro(int n, String desc, int qtd) {
+    return Erro.builder()
+        .numero(n)
+        .descricao(desc)
+        .quantidade(qtd)
+        .build();
   }
 
 }

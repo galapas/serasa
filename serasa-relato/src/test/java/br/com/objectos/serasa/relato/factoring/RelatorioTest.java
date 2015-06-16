@@ -23,7 +23,14 @@ import org.testng.annotations.Test;
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-public class RelatorioTest {
+public class RelatorioTest extends AbstractTest {
+
+  @Test
+  public void parse() {
+    ASSERT.parseList("retorno-relatorio02.txt")
+        .with(RelatorioParser.getMatcher(), RelatorioParser.get())
+        .resultIsEqualTo(RelatorioFake.RELATORIO_02);
+  }
 
   @Test
   public void size() {

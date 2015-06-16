@@ -1,0 +1,5 @@
+88243  TITULO INFORMADO EM DUPLICIDADE                                 3
+88309  CNPJ E DIG DO CEDENTE NAO CONFEREM                             57
+88317  CODIGO CMC7 INVALIDO PARA O TIPO DOCTO CHEQUE                   9
+88336  CMC7 INVALIDO - BANCO INEXISTENTE                               7
+88337  CMC7 INVALIDO - NUMERO DO BANCO ZERADO                          1

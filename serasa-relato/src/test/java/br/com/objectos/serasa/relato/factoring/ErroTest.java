@@ -23,11 +23,18 @@ import org.testng.annotations.Test;
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-public class ErroTest {
+public class ErroTest extends AbstractTest {
+
+  @Test
+  public void parse() {
+    ASSERT.parseList("retorno-erro02.txt")
+        .with(ErroParser.getMatcher(), ErroParser.get())
+        .resultIsEqualTo(ErroFake.ERRO_02);
+  }
 
   @Test
   public void size() {
-    String res = ErroFake.ERRO_02.toString();
+    String res = ErroFake.ERRO_99.toString();
     assertThat(res.length(), equalTo(190 + 1));
   }
 
