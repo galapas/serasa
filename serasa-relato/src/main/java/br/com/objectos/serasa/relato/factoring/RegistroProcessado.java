@@ -15,33 +15,59 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import br.com.objectos.core.testing.Testable;
-import br.com.objectos.io.flat.annotation.Fixed;
-import br.com.objectos.io.flat.annotation.Prefix;
-import br.com.objectos.io.flat.annotation.RecordPojo;
-import br.com.objectos.io.flat.annotation.Text;
-
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-@RecordPojo
-public abstract class Processamento implements Testable<Processamento> {
+public abstract class RegistroProcessado {
 
-  @Prefix
-  @Fixed("77")
-  abstract String id();
+  public abstract String registro();
 
-  @Text(length = 2)
-  public abstract String numero();
+  abstract int erro00();
 
-  @Text(length = 186)
-  public abstract String mensagem();
+  abstract int erro01();
 
-  Processamento() {
+  abstract int erro02();
+
+  abstract int erro03();
+
+  abstract int erro04();
+
+  abstract int erro05();
+
+  abstract int erro06();
+
+  abstract int erro07();
+
+  abstract int erro08();
+
+  abstract int erro09();
+
+  abstract int erro10();
+
+  abstract int erro11();
+
+  abstract int erro12();
+
+  abstract int erro13();
+
+  abstract int erro14();
+
+  abstract int erro15();
+
+  abstract int erro16();
+
+  abstract int erro17();
+
+  abstract int erro18();
+
+  abstract int erro19();
+
+  RegistroProcessado() {
   }
 
-  public static ProcessamentoBuilder builder() {
-    return new ProcessamentoBuilderPojo();
+  @Override
+  public String toString() {
+    return registro();
   }
 
 }
