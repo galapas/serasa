@@ -78,11 +78,11 @@ public abstract class TituloNormal {
   @Fill(character = ' ', length = 1)
   abstract String brancos0();
 
-  @CustomFormat(length = 14, formatter = CnpjFormatter.class)
-  abstract Cnpj cnpjCedente();
-
   @Fixed("0")
   abstract String ajusteCnpjCedente();
+
+  @CustomFormat(length = 14, formatter = CnpjFormatter.class)
+  abstract Cnpj cnpjCedente();
 
   @FlatEnumFormat(length = 2)
   abstract TipoTitulo tipoTitulo();
