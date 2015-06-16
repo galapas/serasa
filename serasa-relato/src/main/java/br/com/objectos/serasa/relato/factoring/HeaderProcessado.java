@@ -20,6 +20,7 @@ import br.com.objectos.io.flat.annotation.IntegerFormat;
 import br.com.objectos.io.flat.annotation.Prefix;
 import br.com.objectos.io.flat.annotation.RecordPojo;
 import br.com.objectos.io.flat.annotation.Text;
+import br.com.objectos.io.flat.annotation.WhenZero;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
@@ -35,63 +36,83 @@ public abstract class HeaderProcessado {
   abstract String registro();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro00();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro01();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro02();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro03();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro04();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro05();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro06();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro07();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro08();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro09();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro10();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro11();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro12();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro13();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro14();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro15();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro16();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro17();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro18();
 
   @IntegerFormat(length = 3)
+  @WhenZero("   ")
   abstract int erro19();
 
   HeaderProcessado() {
