@@ -37,7 +37,24 @@ public class TituloNumeroTest {
     TituloNumero ans = TituloNumero.builder()
         .numero("")
         .hashD("#D")
-        .numeroLongo("2374567     12345         987   ")
+        .numeroLongo("2374567    012345  0000000987   ")
+        .build();
+    assertThat(res, isEqualTo(ans));
+  }
+
+  @Test
+  public void cheque_truncate() {
+    ChequeNumero cheque = ChequeNumero.builder()
+        .banco(237)
+        .agencia(456789)
+        .numero(1234567)
+        .conta(1234567890)
+        .build();
+    TituloNumero res = cheque.toTituloNumero();
+    TituloNumero ans = TituloNumero.builder()
+        .numero("")
+        .hashD("#D")
+        .numeroLongo("2374567    123456  1234567890   ")
         .build();
     assertThat(res, isEqualTo(ans));
   }

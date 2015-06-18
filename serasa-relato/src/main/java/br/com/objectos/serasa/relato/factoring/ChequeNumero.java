@@ -17,6 +17,7 @@ package br.com.objectos.serasa.relato.factoring;
 
 import br.com.objectos.io.flat.annotation.Fill;
 import br.com.objectos.io.flat.annotation.IntegerFormat;
+import br.com.objectos.io.flat.annotation.IntegerOption;
 import br.com.objectos.io.flat.annotation.RecordPojo;
 
 /**
@@ -25,22 +26,22 @@ import br.com.objectos.io.flat.annotation.RecordPojo;
 @RecordPojo
 public abstract class ChequeNumero {
 
-  @IntegerFormat(length = 3)
+  @IntegerFormat(length = 3, options = { IntegerOption.ZEROFILL })
   abstract int banco();
 
-  @IntegerFormat(length = 4)
+  @IntegerFormat(length = 4, options = { IntegerOption.ZEROFILL })
   abstract int agencia();
 
   @Fill(character = ' ', length = 4)
   abstract String filler0();
 
-  @IntegerFormat(length = 6)
+  @IntegerFormat(length = 6, options = { IntegerOption.ZEROFILL })
   abstract int numero();
 
   @Fill(character = ' ', length = 2)
   abstract String filler1();
 
-  @IntegerFormat(length = 10)
+  @IntegerFormat(length = 10, options = { IntegerOption.ZEROFILL })
   abstract int conta();
 
   @Fill(character = ' ', length = 1)
