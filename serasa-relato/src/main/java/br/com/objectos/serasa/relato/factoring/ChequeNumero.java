@@ -32,19 +32,19 @@ public abstract class ChequeNumero {
   @IntegerFormat(length = 4, options = { IntegerOption.ZEROFILL })
   abstract int agencia();
 
-  @Fill(character = ' ', length = 4)
+  @Fill(character = '0', length = 4)
   abstract String filler0();
 
   @IntegerFormat(length = 6, options = { IntegerOption.ZEROFILL })
   abstract int numero();
 
-  @Fill(character = ' ', length = 2)
+  @Fill(character = '0', length = 2)
   abstract String filler1();
 
   @IntegerFormat(length = 10, options = { IntegerOption.ZEROFILL })
   abstract int conta();
 
-  @Fill(character = ' ', length = 1)
+  @Fill(character = '0', length = 1)
   abstract String filler2();
 
   @Fill(character = ' ', length = 2)

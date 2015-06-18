@@ -37,7 +37,7 @@ public class TituloNumeroTest {
     TituloNumero ans = TituloNumero.builder()
         .numero("")
         .hashD("#D")
-        .numeroLongo("2374567    012345  0000000987   ")
+        .numeroLongo("237456700000123450000000009870  ")
         .build();
     assertThat(res, isEqualTo(ans));
   }
@@ -54,7 +54,7 @@ public class TituloNumeroTest {
     TituloNumero ans = TituloNumero.builder()
         .numero("")
         .hashD("#D")
-        .numeroLongo("2374567    123456  1234567890   ")
+        .numeroLongo("237456700001234560012345678900  ")
         .build();
     assertThat(res, isEqualTo(ans));
   }
