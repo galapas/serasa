@@ -61,6 +61,18 @@ RemessaNormal remessa = Remessas.normal()
     .build();
 ``` 
 
+## Maven
+
+objectos :: serasa está na central Maven.
+
+```xml
+<dependency>
+    <groupId>br.com.objectos</groupId>
+    <artifactId>serasa-{{modulo}}</artifactId>
+    <version>0.2.1</version>
+</dependency>
+```
+
 ## Licença de uso
 
 Copyright 2015 [objectos, fábrica de software LTDA](http://www.objectos.com.br)
