@@ -27,6 +27,7 @@ class HeaderConciliacaoFake {
   public static final HeaderConciliacao OBJECTOS_2015_04_28 = Headers.conciliacao()
       .cnpj(Cnpj.valueOf(7430629000110l))
       .dataFinal(LocalDate.of(2015, 4, 29))
+      .reservado("")
       .build();
 
   private HeaderConciliacaoFake() {

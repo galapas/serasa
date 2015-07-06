@@ -35,7 +35,7 @@ public abstract class TrailerConciliacao {
   @Fill(character = '0', length = 11)
   abstract String tempoRelacionamentoPj();
 
-  @Fill(character = ' ', length = 44)
+  @Fill(character = '0', length = 44)
   abstract String brancos0();
 
   @IntegerFormat(length = 11, options = { IntegerOption.ZEROFILL })

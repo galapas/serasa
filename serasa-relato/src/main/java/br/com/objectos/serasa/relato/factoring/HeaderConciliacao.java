@@ -24,6 +24,7 @@ import br.com.objectos.io.flat.annotation.LocalDateFormat;
 import br.com.objectos.io.flat.annotation.LocalDatePattern;
 import br.com.objectos.io.flat.annotation.Prefix;
 import br.com.objectos.io.flat.annotation.RecordPojo;
+import br.com.objectos.io.flat.annotation.Text;
 import br.com.objectos.serasa.format.CnpjFormatter;
 import br.com.objectos.way.base.br.Cnpj;
 
@@ -52,7 +53,7 @@ public abstract class HeaderConciliacao {
   @Fixed("D")
   abstract String periodicidade();
 
-  @Fill(character = ' ', length = 15)
+  @Text(length = 15)
   abstract String reservado();
 
   @Fixed("028")
