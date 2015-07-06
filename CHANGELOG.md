@@ -1,5 +1,10 @@
 # Change Log
 
+## objectos :: serasa :: 0.2.2
+
+* Upgrade para io 0.2.3
+* Corrige Conciliação
+
 ## objectos :: serasa :: 0.2.1
 
 * Upgrade para io 0.2.1

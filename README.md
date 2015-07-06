@@ -69,7 +69,7 @@ objectos :: serasa está na central Maven.
 <dependency>
     <groupId>br.com.objectos</groupId>
     <artifactId>serasa-{{modulo}}</artifactId>
-    <version>0.2.1</version>
+    <version>0.2.2</version>
 </dependency>
 ```
 
