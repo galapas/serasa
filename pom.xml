@@ -8,7 +8,7 @@
 	</parent>
 
 	<artifactId>serasa</artifactId>
-	<version>0.2.3</version>
+	<version>0.2.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>objectos :: serasa</name>
@@ -27,7 +27,7 @@
 		<connection>scm:git:ssh://git@rio.objectos.com.br:7999/objectos/serasa.git</connection>
 		<developerConnection>scm:git:ssh://git@rio.objectos.com.br:7999/objectos/serasa.git</developerConnection>
 		<url>https://github.com/objectos/serasa</url>
-		<tag>serasa-0.2.3</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<developers>
