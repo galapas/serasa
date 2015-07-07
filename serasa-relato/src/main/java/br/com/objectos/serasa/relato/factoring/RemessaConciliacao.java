@@ -59,6 +59,10 @@ public abstract class RemessaConciliacao implements WritableFlatFile {
     return header().dataFinal();
   }
 
+  public String reservado() {
+    return header().reservado();
+  }
+
   public Stream<TituloConciliacao> tituloStream() {
     return tituloList().stream();
   }

@@ -54,7 +54,7 @@ public abstract class HeaderConciliacao {
   abstract String periodicidade();
 
   @Text(length = 15)
-  abstract String reservado();
+  public abstract String reservado();
 
   @Fixed("028")
   abstract String segmentoFactoring();
