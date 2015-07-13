@@ -62,7 +62,7 @@
 					<artifactId>maven-release-plugin</artifactId>
 					<configuration>
 						<mavenExecutorId>forked-path</mavenExecutorId>
-						<preparationGoals>clean install</preparationGoals>
+						<preparationGoals>clean</preparationGoals>
 						<arguments>-DskipTests=true</arguments>
 					</configuration>
 				</plugin>
