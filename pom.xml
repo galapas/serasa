@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -49,8 +50,8 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<objectos.auto.version>0.4.6</objectos.auto.version>
-		<objectos.io.version>0.2.3</objectos.io.version>
+		<objectos.auto.version>0.4.7</objectos.auto.version>
+		<objectos.io.version>0.3.0</objectos.io.version>
 		<objectos.way-base.version>2.7.0</objectos.way-base.version>
 	</properties>
 
@@ -60,6 +61,18 @@
 				<groupId>br.com.objectos</groupId>
 				<artifactId>io-flat</artifactId>
 				<version>${objectos.io.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>br.com.objectos</groupId>
+				<artifactId>io-flat-compiler</artifactId>
+				<version>${objectos.io.version}</version>
+				<optional>true</optional>
+			</dependency>
+			<dependency>
+				<groupId>br.com.objectos</groupId>
+				<artifactId>auto</artifactId>
+				<version>${objectos.auto.version}</version>
+				<optional>true</optional>
 			</dependency>
 			<dependency>
 				<groupId>br.com.objectos</groupId>

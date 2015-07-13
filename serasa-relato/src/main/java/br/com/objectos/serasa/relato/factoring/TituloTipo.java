@@ -16,6 +16,8 @@
 package br.com.objectos.serasa.relato.factoring;
 
 import br.com.objectos.io.flat.FlatEnum;
+import br.com.objectos.serasa.format.CnpjFormatter;
+import br.com.objectos.serasa.format.CpfFormatter;
 import br.com.objectos.way.base.br.CadastroRFB;
 import br.com.objectos.way.base.br.Cnpj;
 
@@ -34,6 +36,11 @@ public enum TituloTipo implements FlatEnum {
     void addTo(TrailerNormalHelper helper) {
       helper.titulosPj();
     }
+
+    @Override
+    CadastroRFB cadastroRfb(String valor) {
+      return CnpjFormatter.get().parse(valor);
+    }
   },
 
   CPF("09") {
@@ -45,6 +52,11 @@ public enum TituloTipo implements FlatEnum {
     @Override
     void addTo(TrailerNormalHelper helper) {
       helper.titulosPf();
+    }
+
+    @Override
+    CadastroRFB cadastroRfb(String valor) {
+      return CpfFormatter.get().parse(valor);
     }
   };
 
@@ -66,5 +78,7 @@ public enum TituloTipo implements FlatEnum {
   abstract void addTo(TrailerConciliacaoHelper helper);
 
   abstract void addTo(TrailerNormalHelper helper);
+
+  abstract CadastroRFB cadastroRfb(String valor);
 
 }

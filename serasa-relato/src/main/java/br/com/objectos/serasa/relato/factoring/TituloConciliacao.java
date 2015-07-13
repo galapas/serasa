@@ -28,9 +28,8 @@ import br.com.objectos.io.flat.annotation.LocalDatePattern;
 import br.com.objectos.io.flat.annotation.Prefix;
 import br.com.objectos.io.flat.annotation.RecordPojo;
 import br.com.objectos.io.flat.annotation.Text;
-import br.com.objectos.serasa.format.CadastroRfbFormatter;
+import br.com.objectos.serasa.format.CadastroSacadoFormatter;
 import br.com.objectos.serasa.format.CnpjFormatter;
-import br.com.objectos.way.base.br.CadastroRFB;
 import br.com.objectos.way.base.br.Cnpj;
 
 /**
@@ -43,11 +42,8 @@ public abstract class TituloConciliacao {
   @Fixed("01")
   abstract String id();
 
-  @CustomFormat(length = 14, formatter = CadastroRfbFormatter.class)
-  public abstract CadastroRFB cadastroSacado();
-
-  @FlatEnumFormat(length = 2)
-  abstract TituloTipo tipo();
+  @CustomFormat(length = 16, formatter = CadastroSacadoFormatter.class)
+  public abstract CadastroSacado cadastroSacado();
 
   @Text(length = 10)
   public abstract String numeroTitulo();
@@ -118,7 +114,7 @@ public abstract class TituloConciliacao {
   }
 
   void addTo(TrailerConciliacaoHelper helper) {
-    tipo().addTo(helper);
+    cadastroSacado().tipo().addTo(helper);
   }
 
 }

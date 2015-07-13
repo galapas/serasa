@@ -26,8 +26,7 @@ import br.com.objectos.way.base.br.Cpf;
 class TituloConciliacaoFake {
 
   public static final TituloConciliacao TITULO_0001 = TituloConciliacao.builder()
-      .cadastroSacado(Cpf.valueOf(8261431649l))
-      .tipo(TituloTipo.CPF)
+      .cadastroSacado(CadastroSacado.of(Cpf.valueOf(8261431649l)))
       .numeroTitulo("0001")
       .dataEmissao(LocalDate.of(2015, 2, 14))
       .valorNominal(123.45)
@@ -40,8 +39,7 @@ class TituloConciliacaoFake {
       .tipoInformacao(TipoInformacao.SACADO_CEDENTE)
       .build();
   public static final TituloConciliacao TITULO_0002 = TituloConciliacao.builder()
-      .cadastroSacado(Cpf.valueOf(8261431649l))
-      .tipo(TituloTipo.CPF)
+      .cadastroSacado(CadastroSacado.of(Cpf.valueOf(8261431649l)))
       .numeroTitulo("")
       .dataEmissao(LocalDate.of(2015, 2, 14))
       .valorNominal(123.45)
@@ -54,8 +52,7 @@ class TituloConciliacaoFake {
       .tipoInformacao(TipoInformacao.SACADO_CEDENTE)
       .build();
   public static final TituloConciliacao TITULO_0003 = TituloConciliacao.builder()
-      .cadastroSacado(Cpf.valueOf(8261431649l))
-      .tipo(TituloTipo.CPF)
+      .cadastroSacado(CadastroSacado.of(Cpf.valueOf(8261431649l)))
       .numeroTitulo("")
       .dataEmissao(LocalDate.of(2015, 2, 14))
       .valorNominal(123.45)

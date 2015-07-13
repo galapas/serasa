@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -10,44 +11,6 @@
 	<artifactId>serasa-relato</artifactId>
 	<name>objectos :: serasa :: relato</name>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.bsc.maven</groupId>
-				<artifactId>maven-processor-plugin</artifactId>
-				<configuration>
-					<processors>
-						<processor>br.com.objectos.auto.pojo.AutoPojoProcessor</processor>
-						<processor>br.com.objectos.io.compiler.FlatFilePojoProcessor</processor>
-						<processor>br.com.objectos.io.compiler.RecordPojoProcessor</processor>
-					</processors>
-				</configuration>
-				<executions>
-					<execution>
-						<id>process</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>process</goal>
-						</goals>
-					</execution>
-				</executions>
-				<dependencies>
-					<dependency>
-						<groupId>br.com.objectos</groupId>
-						<artifactId>io-compiler</artifactId>
-						<classifier>jar-with-dependencies</classifier>
-						<version>${objectos.io.version}</version>
-					</dependency>
-					<dependency>
-						<groupId>br.com.objectos</groupId>
-						<artifactId>auto</artifactId>
-						<version>${objectos.auto.version}</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-		</plugins>
-	</build>
-
 	<dependencies>
 		<dependency>
 			<groupId>br.com.objectos</groupId>
@@ -57,6 +20,16 @@
 			<groupId>br.com.objectos</groupId>
 			<artifactId>core</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>br.com.objectos</groupId>
+			<artifactId>io-flat-compiler</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>br.com.objectos</groupId>
+			<artifactId>auto</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>br.com.objectos</groupId>
 			<artifactId>testing</artifactId>
