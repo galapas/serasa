@@ -1,0 +1,5 @@
+#!/bin/bash
+find -type f -name ".classpath" -exec git rm --cached {} \;
+find -type f -name ".factorypath" -exec git rm --cached {} \;
+find -type f -name ".project" -exec git rm --cached {} \;
+find -type d -name ".settings" -exec git rm --cached -r {} \;

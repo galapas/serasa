@@ -17,14 +17,15 @@ package br.com.objectos.serasa.relato.factoring;
 
 import java.util.List;
 
-import br.com.objectos.io.flat.WritableFlatFile;
-import br.com.objectos.io.flat.annotation.FlatFilePojo;
+import br.com.objectos.flat.FlatFile;
+import br.com.objectos.flat.WritableFlatFile;
+import br.com.objectos.pojo.Pojo;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-@FlatFilePojo
-public abstract class RemessaNormal implements WritableFlatFile {
+@Pojo
+public abstract class RemessaNormal implements FlatFile, WritableFlatFile {
 
   abstract HeaderNormal header();
 

@@ -17,8 +17,8 @@ package br.com.objectos.serasa.relato.factoring;
 
 import java.time.LocalDate;
 
-import br.com.objectos.io.flat.CustomFormatter;
-import br.com.objectos.io.flat.annotation.LocalDatePattern;
+import br.com.objectos.flat.CustomFormatter;
+import br.com.objectos.flat.pojo.LocalDatePattern;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)

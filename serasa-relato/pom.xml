@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -13,29 +15,42 @@
 	<dependencies>
 		<dependency>
 			<groupId>br.com.objectos</groupId>
-			<artifactId>way-base</artifactId>
+			<artifactId>assertion</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>br.com.objectos</groupId>
+			<artifactId>br</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>br.com.objectos</groupId>
 			<artifactId>core</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>br.com.objectos</groupId>
-			<artifactId>io-flat-compiler</artifactId>
+			<artifactId>flat</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>br.com.objectos</groupId>
-			<artifactId>auto</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>br.com.objectos</groupId>
-			<artifactId>testing</artifactId>
+			<artifactId>flat-pojo-plugin</artifactId>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>br.com.objectos</groupId>
-			<artifactId>io-flat</artifactId>
+			<artifactId>pojo</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>br.com.objectos</groupId>
+			<artifactId>pojo-compiler</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>br.com.objectos</groupId>
+			<artifactId>testable</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>br.com.objectos</groupId>
+			<artifactId>testable-pojo-plugin</artifactId>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 

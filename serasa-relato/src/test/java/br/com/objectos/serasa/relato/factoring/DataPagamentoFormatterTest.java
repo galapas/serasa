@@ -15,8 +15,7 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import static br.com.objectos.testing.MoreMatchers.isEqualTo;
-import static org.hamcrest.MatcherAssert.assertThat;
+import br.com.objectos.assertion.TestableAssertion;
 
 import org.testng.annotations.Test;
 
@@ -30,19 +29,19 @@ public class DataPagamentoFormatterTest {
   @Test
   public void blank() {
     DataPagamento res = formatter.parse("");
-    assertThat(res, isEqualTo(DataPagamento.empty()));
+    TestableAssertion.assertThat(res).isEqualTo(DataPagamento.empty());
   }
 
   @Test
   public void empty() {
     DataPagamento res = formatter.parse("99999999");
-    assertThat(res, isEqualTo(DataPagamento.empty()));
+    TestableAssertion.assertThat(res).isEqualTo(DataPagamento.empty());
   }
 
   @Test
   public void present() {
     DataPagamento res = formatter.parse("20150525");
-    assertThat(res, isEqualTo(DataPagamento.of(2015, 5, 25)));
+    TestableAssertion.assertThat(res).isEqualTo(DataPagamento.of(2015, 5, 25));
   }
 
 }

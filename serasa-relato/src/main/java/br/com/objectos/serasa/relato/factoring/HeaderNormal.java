@@ -17,21 +17,22 @@ package br.com.objectos.serasa.relato.factoring;
 
 import java.time.LocalDate;
 
-import br.com.objectos.io.flat.annotation.CustomFormat;
-import br.com.objectos.io.flat.annotation.Fill;
-import br.com.objectos.io.flat.annotation.Fixed;
-import br.com.objectos.io.flat.annotation.LocalDateFormat;
-import br.com.objectos.io.flat.annotation.LocalDatePattern;
-import br.com.objectos.io.flat.annotation.Prefix;
-import br.com.objectos.io.flat.annotation.RecordPojo;
+import br.com.objectos.br.Cnpj;
+import br.com.objectos.flat.IsRecord;
+import br.com.objectos.flat.pojo.CustomFormat;
+import br.com.objectos.flat.pojo.Fill;
+import br.com.objectos.flat.pojo.Fixed;
+import br.com.objectos.flat.pojo.LocalDateFormat;
+import br.com.objectos.flat.pojo.LocalDatePattern;
+import br.com.objectos.flat.pojo.Prefix;
+import br.com.objectos.pojo.Pojo;
 import br.com.objectos.serasa.format.CnpjFormatter;
-import br.com.objectos.way.base.br.Cnpj;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-@RecordPojo
-public abstract class HeaderNormal {
+@Pojo
+public abstract class HeaderNormal implements IsRecord {
 
   @Prefix
   @Fixed("00")

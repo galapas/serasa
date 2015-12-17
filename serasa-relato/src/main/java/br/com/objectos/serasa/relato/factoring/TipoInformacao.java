@@ -15,7 +15,7 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import br.com.objectos.io.flat.FlatEnum;
+import br.com.objectos.flat.FlatEnum;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)

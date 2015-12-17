@@ -19,8 +19,8 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-import br.com.objectos.way.base.br.Cnpj;
-import br.com.objectos.way.base.br.Cpf;
+import br.com.objectos.br.Cnpj;
+import br.com.objectos.br.Cpf;
 
 import com.google.common.collect.ImmutableList;
 

@@ -15,8 +15,7 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import static br.com.objectos.testing.MoreMatchers.isEqualTo;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static br.com.objectos.assertion.TestableAssertion.assertThat;
 
 import java.util.List;
 
@@ -40,7 +39,7 @@ public class TituloProcessadoTest {
   public void to_registro_sintetico(TituloProcessado titulo, List<Erro> erroList, RegistroSintetico expected) {
     ErroMap erroMap = ErroMap.mapOf(erroList);
     RegistroSintetico res = titulo.toRegistroSintetico(erroMap);
-    assertThat(res, isEqualTo(expected));
+    assertThat(res).isEqualTo(expected);
   }
 
 }

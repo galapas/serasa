@@ -15,18 +15,19 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import br.com.objectos.io.flat.annotation.Fixed;
-import br.com.objectos.io.flat.annotation.IntegerFormat;
-import br.com.objectos.io.flat.annotation.Prefix;
-import br.com.objectos.io.flat.annotation.RecordPojo;
-import br.com.objectos.io.flat.annotation.Text;
-import br.com.objectos.io.flat.annotation.WhenZero;
+import br.com.objectos.flat.IsRecord;
+import br.com.objectos.flat.pojo.Fixed;
+import br.com.objectos.flat.pojo.IntegerFormat;
+import br.com.objectos.flat.pojo.Prefix;
+import br.com.objectos.flat.pojo.Text;
+import br.com.objectos.flat.pojo.WhenZero;
+import br.com.objectos.pojo.Pojo;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-@RecordPojo
-public abstract class HeaderProcessado extends RegistroProcessado {
+@Pojo
+public abstract class HeaderProcessado extends RegistroProcessado implements IsRecord {
 
   @Prefix
   @Fixed("00")

@@ -15,8 +15,7 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import static br.com.objectos.testing.MoreMatchers.isEqualTo;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static br.com.objectos.assertion.TestableAssertion.assertThat;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -24,11 +23,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
-import br.com.objectos.core.testing.Testable;
-import br.com.objectos.io.flat.FlatFileReader;
-import br.com.objectos.io.flat.RecordMatcher;
-import br.com.objectos.io.flat.RecordParser;
-import br.com.objectos.io.flat.Result;
+import br.com.objectos.assertion.ListAssertion;
+import br.com.objectos.flat.FlatFileReader;
+import br.com.objectos.flat.RecordMatcher;
+import br.com.objectos.flat.RecordParser;
+import br.com.objectos.flat.Result;
+import br.com.objectos.testable.Testable;
 import br.com.objectos.testing.TestResources;
 
 import com.google.common.base.Throwables;
@@ -64,12 +64,12 @@ class SerasaAssert {
       this.name = name;
     }
 
-    public <T extends Testable<T>> ParseListWith<T> with(RecordMatcher recordMatcher, RecordParser<T> recordParser) {
+    public <T extends Testable> ParseListWith<T> with(RecordMatcher recordMatcher, RecordParser<T> recordParser) {
       return new ParseListWith<>(recordMatcher, recordParser);
 
     }
 
-    public class ParseListWith<T extends Testable<T>> {
+    public class ParseListWith<T extends Testable> {
 
       private final RecordMatcher recordMatcher;
       private final RecordParser<T> recordParser;
@@ -83,7 +83,7 @@ class SerasaAssert {
         File file = TestResources.getFile(dir + "/" + name);
         try (FileReader reader = new FileReader(file)) {
           Result<List<T>> result = FlatFileReader.get(reader).parseList(recordMatcher, recordParser);
-          assertThat(result.get(), isEqualTo(expectedList));
+          ListAssertion.assertThat(result.get()).isEqualTo(expectedList);
         } catch (FileNotFoundException e) {
           Throwables.propagate(e);
         } catch (IOException e) {
@@ -103,12 +103,12 @@ class SerasaAssert {
       this.name = name;
     }
 
-    public <T extends Testable<T>> ParseOneWith<T> with(RecordParser<T> recordParser) {
+    public <T extends Testable> ParseOneWith<T> with(RecordParser<T> recordParser) {
       return new ParseOneWith<>(recordParser);
 
     }
 
-    public class ParseOneWith<T extends Testable<T>> {
+    public class ParseOneWith<T extends Testable> {
 
       private final RecordParser<T> recordParser;
 
@@ -120,7 +120,7 @@ class SerasaAssert {
         File file = TestResources.getFile(dir + "/" + name);
         try (FileReader reader = new FileReader(file)) {
           Result<T> result = FlatFileReader.get(reader).parseOne(recordParser);
-          assertThat(result.get(), isEqualTo(expected));
+          assertThat(result.get()).isEqualTo(expected);
         } catch (FileNotFoundException e) {
           Throwables.propagate(e);
         } catch (IOException e) {

@@ -18,9 +18,9 @@ package br.com.objectos.serasa.relato.factoring;
 import static br.com.objectos.testing.MoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-import br.com.objectos.way.base.br.CadastroRFB;
-import br.com.objectos.way.base.br.Cnpj;
-import br.com.objectos.way.base.br.Cpf;
+import br.com.objectos.br.CadastroRFB;
+import br.com.objectos.br.Cnpj;
+import br.com.objectos.br.Cpf;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

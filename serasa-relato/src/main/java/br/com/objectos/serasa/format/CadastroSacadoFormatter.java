@@ -15,7 +15,7 @@
  */
 package br.com.objectos.serasa.format;
 
-import br.com.objectos.io.flat.CustomFormatter;
+import br.com.objectos.flat.CustomFormatter;
 import br.com.objectos.serasa.relato.factoring.CadastroSacado;
 
 /**

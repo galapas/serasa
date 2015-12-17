@@ -20,15 +20,16 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Stream;
 
-import br.com.objectos.io.flat.WritableFlatFile;
-import br.com.objectos.io.flat.annotation.FlatFilePojo;
-import br.com.objectos.way.base.br.Cnpj;
+import br.com.objectos.br.Cnpj;
+import br.com.objectos.flat.FlatFile;
+import br.com.objectos.flat.WritableFlatFile;
+import br.com.objectos.pojo.Pojo;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-@FlatFilePojo
-public abstract class RemessaConciliacao implements WritableFlatFile {
+@Pojo
+public abstract class RemessaConciliacao implements FlatFile, WritableFlatFile {
 
   abstract HeaderConciliacao header();
 

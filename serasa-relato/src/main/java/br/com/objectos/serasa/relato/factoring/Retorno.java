@@ -19,13 +19,14 @@ import java.io.Reader;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import br.com.objectos.io.flat.annotation.FlatFilePojo;
+import br.com.objectos.flat.FlatFile;
+import br.com.objectos.pojo.Pojo;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-@FlatFilePojo
-public abstract class Retorno {
+@Pojo
+public abstract class Retorno implements FlatFile {
 
   abstract Processamento processamento();
 
