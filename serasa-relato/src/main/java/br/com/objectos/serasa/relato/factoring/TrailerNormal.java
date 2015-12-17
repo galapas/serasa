@@ -15,19 +15,20 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import br.com.objectos.io.flat.annotation.Fill;
-import br.com.objectos.io.flat.annotation.Fixed;
-import br.com.objectos.io.flat.annotation.IntegerFormat;
-import br.com.objectos.io.flat.annotation.IntegerOption;
-import br.com.objectos.io.flat.annotation.Prefix;
-import br.com.objectos.io.flat.annotation.RecordPojo;
-import br.com.objectos.core.testing.Testable;
+import br.com.objectos.flat.IsRecord;
+import br.com.objectos.flat.pojo.Fill;
+import br.com.objectos.flat.pojo.Fixed;
+import br.com.objectos.flat.pojo.IntegerFormat;
+import br.com.objectos.flat.pojo.IntegerOption;
+import br.com.objectos.flat.pojo.Prefix;
+import br.com.objectos.pojo.Pojo;
+import br.com.objectos.testable.Testable;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-@RecordPojo
-public abstract class TrailerNormal implements Testable<TrailerNormal> {
+@Pojo
+public abstract class TrailerNormal implements IsRecord, Testable {
 
   @Prefix
   @Fixed("99")

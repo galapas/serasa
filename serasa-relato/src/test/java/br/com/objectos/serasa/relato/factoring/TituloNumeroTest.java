@@ -15,8 +15,7 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import static br.com.objectos.testing.MoreMatchers.isEqualTo;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static br.com.objectos.assertion.TestableAssertion.assertThat;
 
 import org.testng.annotations.Test;
 
@@ -39,7 +38,7 @@ public class TituloNumeroTest {
         .hashD("#D")
         .numeroLongo("237456700000123450000000009870  ")
         .build();
-    assertThat(res, isEqualTo(ans));
+    assertThat(res).isEqualTo(ans);
   }
 
   @Test
@@ -56,7 +55,7 @@ public class TituloNumeroTest {
         .hashD("#D")
         .numeroLongo("237456700001234560012345678900  ")
         .build();
-    assertThat(res, isEqualTo(ans));
+    assertThat(res).isEqualTo(ans);
   }
 
   @Test
@@ -67,7 +66,7 @@ public class TituloNumeroTest {
         .hashD("")
         .numeroLongo("")
         .build();
-    assertThat(res, isEqualTo(ans));
+    assertThat(res).isEqualTo(ans);
   }
 
   @Test
@@ -78,7 +77,7 @@ public class TituloNumeroTest {
         .hashD("#D")
         .numeroLongo("12345678901")
         .build();
-    assertThat(res, isEqualTo(ans));
+    assertThat(res).isEqualTo(ans);
   }
 
 }

@@ -15,8 +15,7 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import static br.com.objectos.testing.MoreMatchers.isEqualTo;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static br.com.objectos.assertion.TestableAssertion.assertThat;
 
 import java.util.List;
 
@@ -38,7 +37,7 @@ public class TrailersTest {
         .tempoRelacionamentoPf(2)
         .titulosPf(1)
         .build();
-    assertThat(res, isEqualTo(ans));
+    assertThat(res).isEqualTo(ans);
   }
 
 }

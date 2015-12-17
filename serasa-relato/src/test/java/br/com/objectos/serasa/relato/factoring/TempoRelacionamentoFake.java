@@ -18,8 +18,8 @@ package br.com.objectos.serasa.relato.factoring;
 import java.time.LocalDate;
 import java.util.List;
 
-import br.com.objectos.way.base.br.Cnpj;
-import br.com.objectos.way.base.br.Cpf;
+import br.com.objectos.br.Cnpj;
+import br.com.objectos.br.Cpf;
 
 import com.google.common.collect.ImmutableList;
 

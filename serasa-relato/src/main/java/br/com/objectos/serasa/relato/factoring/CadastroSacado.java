@@ -17,18 +17,19 @@ package br.com.objectos.serasa.relato.factoring;
 
 import java.io.StringReader;
 
-import br.com.objectos.io.flat.FlatFileReader;
-import br.com.objectos.io.flat.annotation.FlatEnumFormat;
-import br.com.objectos.io.flat.annotation.RecordPojo;
-import br.com.objectos.io.flat.annotation.Text;
+import br.com.objectos.br.CadastroRFB;
+import br.com.objectos.flat.FlatFileReader;
+import br.com.objectos.flat.IsRecord;
+import br.com.objectos.flat.pojo.FlatEnumFormat;
+import br.com.objectos.flat.pojo.Text;
+import br.com.objectos.pojo.Pojo;
 import br.com.objectos.serasa.format.CadastroRfbFormatter;
-import br.com.objectos.way.base.br.CadastroRFB;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-@RecordPojo
-public abstract class CadastroSacado {
+@Pojo
+public abstract class CadastroSacado implements IsRecord {
 
   @Text(length = 14)
   abstract String valor();

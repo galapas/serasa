@@ -15,16 +15,15 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import br.com.objectos.core.auto.AutoPojo;
-import br.com.objectos.core.testing.Testable;
-
-import com.google.common.base.Strings;
+import br.com.objectos.core.Strings;
+import br.com.objectos.pojo.Pojo;
+import br.com.objectos.testable.Testable;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-@AutoPojo
-public abstract class TituloNumero implements Testable<TituloNumero> {
+@Pojo
+public abstract class TituloNumero implements Testable {
 
   public abstract String numero();
   public abstract String hashD();

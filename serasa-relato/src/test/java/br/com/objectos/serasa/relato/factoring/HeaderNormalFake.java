@@ -17,7 +17,7 @@ package br.com.objectos.serasa.relato.factoring;
 
 import java.time.LocalDate;
 
-import br.com.objectos.way.base.br.Cnpj;
+import br.com.objectos.br.Cnpj;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)

@@ -15,9 +15,9 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import br.com.objectos.io.flat.FlatEnum;
-import br.com.objectos.way.base.br.CadastroRFB;
-import br.com.objectos.way.base.br.Cnpj;
+import br.com.objectos.br.CadastroRFB;
+import br.com.objectos.br.Cnpj;
+import br.com.objectos.flat.FlatEnum;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)

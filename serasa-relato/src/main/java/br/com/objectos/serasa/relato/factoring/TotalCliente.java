@@ -15,17 +15,18 @@
  */
 package br.com.objectos.serasa.relato.factoring;
 
-import br.com.objectos.io.flat.annotation.Fill;
-import br.com.objectos.io.flat.annotation.Fixed;
-import br.com.objectos.io.flat.annotation.IntegerFormat;
-import br.com.objectos.io.flat.annotation.Prefix;
-import br.com.objectos.io.flat.annotation.RecordPojo;
+import br.com.objectos.flat.IsRecord;
+import br.com.objectos.flat.pojo.Fill;
+import br.com.objectos.flat.pojo.Fixed;
+import br.com.objectos.flat.pojo.IntegerFormat;
+import br.com.objectos.flat.pojo.Prefix;
+import br.com.objectos.pojo.Pojo;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-@RecordPojo
-public abstract class TotalCliente {
+@Pojo
+public abstract class TotalCliente implements IsRecord {
 
   @Prefix
   @Fixed("01")

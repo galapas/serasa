@@ -17,14 +17,14 @@ package br.com.objectos.serasa.relato.factoring;
 
 import java.util.List;
 
-import br.com.objectos.core.auto.AutoPojo;
-import br.com.objectos.core.testing.Testable;
+import br.com.objectos.pojo.Pojo;
+import br.com.objectos.testable.Testable;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-@AutoPojo
-public abstract class RegistroSintetico implements Testable<RegistroSintetico> {
+@Pojo
+public abstract class RegistroSintetico implements Testable {
 
   public abstract String registro();
 

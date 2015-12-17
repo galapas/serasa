@@ -18,29 +18,30 @@ package br.com.objectos.serasa.relato.factoring;
 import java.time.LocalDate;
 import java.util.Optional;
 
-import br.com.objectos.io.flat.annotation.CustomFormat;
-import br.com.objectos.io.flat.annotation.DecimalFormat;
-import br.com.objectos.io.flat.annotation.DecimalOption;
-import br.com.objectos.io.flat.annotation.Fill;
-import br.com.objectos.io.flat.annotation.Fixed;
-import br.com.objectos.io.flat.annotation.FlatEnumFormat;
-import br.com.objectos.io.flat.annotation.LocalDateFormat;
-import br.com.objectos.io.flat.annotation.LocalDatePattern;
-import br.com.objectos.io.flat.annotation.Prefix;
-import br.com.objectos.io.flat.annotation.RecordPojo;
-import br.com.objectos.io.flat.annotation.Text;
-import br.com.objectos.io.flat.annotation.WhenAbsent;
-import br.com.objectos.io.flat.annotation.WhenZero;
+import br.com.objectos.br.CadastroRFB;
+import br.com.objectos.br.Cnpj;
+import br.com.objectos.flat.IsRecord;
+import br.com.objectos.flat.pojo.CustomFormat;
+import br.com.objectos.flat.pojo.DecimalFormat;
+import br.com.objectos.flat.pojo.DecimalOption;
+import br.com.objectos.flat.pojo.Fill;
+import br.com.objectos.flat.pojo.Fixed;
+import br.com.objectos.flat.pojo.FlatEnumFormat;
+import br.com.objectos.flat.pojo.LocalDateFormat;
+import br.com.objectos.flat.pojo.LocalDatePattern;
+import br.com.objectos.flat.pojo.Prefix;
+import br.com.objectos.flat.pojo.Text;
+import br.com.objectos.flat.pojo.WhenAbsent;
+import br.com.objectos.flat.pojo.WhenZero;
+import br.com.objectos.pojo.Pojo;
 import br.com.objectos.serasa.format.CadastroRfbFormatter;
 import br.com.objectos.serasa.format.CnpjFormatter;
-import br.com.objectos.way.base.br.CadastroRFB;
-import br.com.objectos.way.base.br.Cnpj;
 
 /**
  * @author marcio.endo@objectos.com.br (Marcio Endo)
  */
-@RecordPojo
-public abstract class TituloNormal {
+@Pojo
+public abstract class TituloNormal implements IsRecord {
 
   @Prefix
   @Fixed("01")

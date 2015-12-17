@@ -18,7 +18,7 @@ package br.com.objectos.serasa.format;
 import static br.com.objectos.testing.MoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-import br.com.objectos.way.base.br.Cnpj;
+import br.com.objectos.br.Cnpj;
 
 import org.testng.annotations.Test;
 
